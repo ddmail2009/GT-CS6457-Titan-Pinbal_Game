@@ -26,9 +26,6 @@ public class CharacterMovement : MonoBehaviour
 
 	bool isGrounded;
 	float origGroundCheckDistance;
-//	Vector3 groundNormal;
-
-	static int groundLayer = LayerMask.NameToLayer ("GameBoard");
 	
 	void Awake ()
 	{
@@ -128,10 +125,24 @@ public class CharacterMovement : MonoBehaviour
 		                         new Vector3 (col.bounds.center.x, col.bounds.max.y + col.radius + 0.1f, col.bounds.center.z),
 		                         col.radius, Vector3.down, out hitInfo, groundCheckDistance)) {
 			isGrounded = true;
+
+
 		} else {
 			isGrounded = false;
 		}
 
 		anim.applyRootMotion = isGrounded;
+	}
+
+	void SnapDownCharacter ()
+	{
+		if (!isGrounded) {
+			return;
+		}
+
+		RaycastHit hitInfo;
+		if (Physics.Raycast (transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, groundCheckDistance)) {
+			rig.MovePosition (hitInfo.point);
+		}
 	}
 }
