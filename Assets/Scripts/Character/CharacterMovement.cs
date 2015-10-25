@@ -20,14 +20,16 @@ public class CharacterMovement : MonoBehaviour
 	Animator anim;
 	Rigidbody rig;
 	CapsuleCollider col;
-
+	
 	float colHeight;
 	Vector3 colCenter, desiredColCenter;
 
 	bool isGrounded;
 	float origGroundCheckDistance;
-	Vector3 groundNormal;
+//	Vector3 groundNormal;
 
+	static int groundLayer = LayerMask.NameToLayer ("GameBoard");
+	
 	void Awake ()
 	{
 		anim = GetComponent <Animator> ();
@@ -85,7 +87,7 @@ public class CharacterMovement : MonoBehaviour
 		if (isGrounded && anim.GetCurrentAnimatorStateInfo (0).IsName ("Locomotion") && Input.GetButton ("Jump")) {
 			isGrounded = false;
 			anim.applyRootMotion = false;
-			groundCheckDistance = 0.1f;
+			groundCheckDistance = 0.01f;
 
 			// let jump force count wasd
 			Vector3 jumpForce = Vector3.up * jumpHeight + transform.forward * v + transform.right * h;
@@ -118,14 +120,16 @@ public class CharacterMovement : MonoBehaviour
 	{
 		RaycastHit hitInfo;
 
-		Debug.DrawLine (transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * groundCheckDistance), Color.blue);
+		Debug.DrawLine (new Vector3 (col.bounds.center.x, col.bounds.min.y + col.radius, col.bounds.center.z),
+		                new Vector3 (col.bounds.center.x, col.bounds.max.y + col.radius, col.bounds.center.z),
+		                Color.green);
 
-		if (Physics.Raycast (transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, groundCheckDistance)) {
+		if (Physics.CapsuleCast (new Vector3 (col.bounds.center.x, col.bounds.min.y + col.radius + 0.1f, col.bounds.center.z),
+		                         new Vector3 (col.bounds.center.x, col.bounds.max.y + col.radius + 0.1f, col.bounds.center.z),
+		                         col.radius, Vector3.down, out hitInfo, groundCheckDistance)) {
 			isGrounded = true;
-			groundNormal = hitInfo.normal;
 		} else {
 			isGrounded = false;
-			groundNormal = Vector3.up;
 		}
 
 		anim.applyRootMotion = isGrounded;
