@@ -26,17 +26,15 @@ public class FlipperController : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		Debug.Log (transform.up);
 		if (Input.GetButton (buttonName)) {
 			if (Mathf.Approximately (flipperHingeJoint.angle, flipperHingeJoint.limits.max)) {
 				flipperRigidbody.isKinematic = true;
 			}
-			// TEMP: use -transform.up instead of transform.forward
-			flipperRigidbody.AddForceAtPosition (-transform.up * force, transform.position + offset, ForceMode.Acceleration);
+
+			flipperRigidbody.AddForceAtPosition (transform.forward * force, transform.position + offset, ForceMode.Acceleration);
 		} else {
 			flipperRigidbody.isKinematic = false;
-			// TEMP: use -transform.up instead of transform.forward
-			flipperRigidbody.AddForceAtPosition (-transform.up * -force, transform.position + offset, ForceMode.Acceleration);
+			flipperRigidbody.AddForceAtPosition (transform.forward * -force, transform.position + offset, ForceMode.Acceleration);
 		}
 	}
 }
