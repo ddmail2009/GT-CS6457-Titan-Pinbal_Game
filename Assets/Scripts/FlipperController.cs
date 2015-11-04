@@ -9,6 +9,7 @@ using System.Collections;
 
 public class FlipperController : MonoBehaviour
 {
+	public bool isFiring = false;
 	public float force = 100.0f;
 	public string buttonName = "Fire1";
 	public Vector3 offset;
@@ -27,12 +28,16 @@ public class FlipperController : MonoBehaviour
 	void FixedUpdate ()
 	{
 		if (Input.GetButton (buttonName)) {
+			isFiring = true;
+
 			if (Mathf.Approximately (flipperHingeJoint.angle, flipperHingeJoint.limits.max)) {
 				flipperRigidbody.isKinematic = true;
 			}
 
 			flipperRigidbody.AddForceAtPosition (transform.forward * force, transform.position + offset, ForceMode.Acceleration);
 		} else {
+			isFiring = false;
+
 			flipperRigidbody.isKinematic = false;
 			flipperRigidbody.AddForceAtPosition (transform.forward * -force, transform.position + offset, ForceMode.Acceleration);
 		}

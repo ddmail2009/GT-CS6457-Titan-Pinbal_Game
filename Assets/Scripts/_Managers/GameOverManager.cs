@@ -15,7 +15,7 @@ public class GameOverManager : MonoBehaviour
 	void Update ()
 	{
 		if (PlayerHealthManager.instance.isDead) {
-			anim.SetTrigger ("GameOver");
+			// anim.SetTrigger ("GameOver");
 
 			restartTimer += Time.deltaTime;
 

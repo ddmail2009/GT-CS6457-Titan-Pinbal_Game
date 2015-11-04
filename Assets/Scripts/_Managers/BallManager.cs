@@ -23,9 +23,17 @@ public class BallManager : MonoBehaviour
 			newBall.transform.parent = transform;
 			numOfBalls += 1;
 
-//			Rigidbody ballRig = newBall.GetComponent <Rigidbody> ();
-//			Vector3 forceDirection = (-transform.right * Random.Range (0f, 1f) + transform.forward * Random.Range (0f, 1f)).normalized;
-//			ballRig.AddForce (forceDirection * Random.Range (10f, 15f), ForceMode.VelocityChange);
+			readyForSpawning = false;
+			Invoke ("GetReadyForSpawning", minSpawnInterval);
+		}
+
+		// FIXME: testing code. remove this after milestone 3
+		if (readyForSpawning && Input.GetButtonUp ("AITest")) {
+			GameObject newBall = Instantiate (ballTemplate, GameObject.Find ("AISpawningPoint").transform.position + transform.up * 0.5f, new Quaternion (15, 0, 0, 0)) as GameObject;
+			newBall.transform.parent = transform;
+			numOfBalls += 1;
+
+			newBall.GetComponent<Rigidbody> ().AddForce (transform.forward * 10.0f, ForceMode.VelocityChange);
 
 			readyForSpawning = false;
 			Invoke ("GetReadyForSpawning", minSpawnInterval);
