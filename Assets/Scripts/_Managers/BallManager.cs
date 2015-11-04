@@ -33,7 +33,7 @@ public class BallManager : MonoBehaviour
 			newBall.transform.parent = transform;
 			numOfBalls += 1;
 
-			newBall.GetComponent<Rigidbody> ().AddForce (transform.forward * 10.0f, ForceMode.VelocityChange);
+			newBall.GetComponent<Rigidbody> ().AddForce (transform.forward * 25.0f, ForceMode.VelocityChange);
 
 			readyForSpawning = false;
 			Invoke ("GetReadyForSpawning", minSpawnInterval);

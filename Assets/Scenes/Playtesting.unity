@@ -1657,6 +1657,10 @@ Prefab:
       propertyPath: m_Name
       value: Douglas
       objectReference: {fileID: 0}
+    - target: {fileID: 11464524, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
+      propertyPath: jumpHeight
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
   m_IsPrefabParent: 0
