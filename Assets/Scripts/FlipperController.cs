@@ -1,7 +1,7 @@
 ﻿/**
  * Team Titan
  *
- * PoHsien Wang
+ * PoHsien Wang, Meng-Hsin Tung
  **/
 
 using UnityEngine;
@@ -30,7 +30,9 @@ public class FlipperController : MonoBehaviour
 		if (Input.GetButton (buttonName)) {
 			isFiring = true;
 
-			if (Mathf.Approximately (flipperHingeJoint.angle, flipperHingeJoint.limits.max)) {
+			Debug.Log (flipperHingeJoint.angle);
+
+			if (Mathf.Abs (flipperHingeJoint.angle - flipperHingeJoint.limits.max) < 2.0f) {
 				flipperRigidbody.isKinematic = true;
 			}
 
