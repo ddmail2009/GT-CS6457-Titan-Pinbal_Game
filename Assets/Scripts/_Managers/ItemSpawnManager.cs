@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Titan
+ * 
+ * Meng-Hsin Tung
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class ItemSpawnManager : MonoBehaviour
@@ -25,14 +31,20 @@ public class ItemSpawnManager : MonoBehaviour
 		}
 
 		for (int i = 0; i < items.Length; i++) {
-			float extentX = Random.Range (-planeDefultExtent, planeDefultExtent);
-			float extentZ = Random.Range (-planeDefultExtent, planeDefultExtent);
+			Vector3 worldSpawningPoint;
+			RaycastHit hitInfo;
 
-			Vector3 localSpawningPoint = new Vector3 (transform.localPosition.x + extentX, 
-			                                          0.5f,
+			do {
+				float extentX = Random.Range (-planeDefultExtent, planeDefultExtent);
+				float extentZ = Random.Range (-planeDefultExtent, planeDefultExtent);
+
+				Vector3 localSpawningPoint = new Vector3 (transform.localPosition.x + extentX, 
+			                                          10.0f,
 			                                          transform.localPosition.z + extentZ);
-			Vector3 worldSpawningPoint = transform.TransformPoint (localSpawningPoint);
-
+				worldSpawningPoint = transform.TransformPoint (localSpawningPoint);
+			} while (!Physics.Raycast(worldSpawningPoint, -transform.up, out hitInfo) || hitInfo.collider.gameObject.name != "Plane");
+		
+			worldSpawningPoint = hitInfo.point + items [i].transform.position.y * transform.up;
 
 			GameObject newObj = Instantiate (items [i], worldSpawningPoint, transform.rotation * items [i].transform.rotation) as GameObject;
 			newObj.transform.parent = transform.parent;

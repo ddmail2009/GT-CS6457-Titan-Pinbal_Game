@@ -7,7 +7,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PickupHeal : MonoBehaviour
+public class MedKitHeal : MonoBehaviour
 {
 	public int healValue = 10;
 	public float destroySpeed = 0f;

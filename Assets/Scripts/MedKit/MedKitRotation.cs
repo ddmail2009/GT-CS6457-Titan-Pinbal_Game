@@ -7,7 +7,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PickupRotation : MonoBehaviour
+public class MedKitRotation : MonoBehaviour
 {
 	public Vector3 rotateAxis = Vector3.forward;
 	public float rotateSpeed = 1f;

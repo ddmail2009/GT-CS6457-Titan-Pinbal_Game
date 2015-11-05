@@ -30,8 +30,6 @@ public class FlipperController : MonoBehaviour
 		if (Input.GetButton (buttonName)) {
 			isFiring = true;
 
-			Debug.Log (flipperHingeJoint.angle);
-
 			if (Mathf.Abs (flipperHingeJoint.angle - flipperHingeJoint.limits.max) < 2.0f) {
 				flipperRigidbody.isKinematic = true;
 			}
