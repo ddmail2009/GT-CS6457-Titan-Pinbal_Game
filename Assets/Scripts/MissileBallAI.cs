@@ -14,6 +14,7 @@ public class MissileBallAI : MonoBehaviour
 	public float normalGravity = 35.2f;
 	public float tracingAdjustmentFrequency = 0.1f;
 	public float tracingAdjustmentForce = 2.5f;
+	public float tracingStartDistance = float.PositiveInfinity;
 	public float tracingStopDistance = 5.0f;
 	public float returningStopDistance = 5.0f;
 	public int numOfPursuits = 3;
@@ -36,6 +37,7 @@ public class MissileBallAI : MonoBehaviour
 	float distToPlayer;
 	
 	Light stateLight;
+	float stateLightIntensity;
 	GameObject[] flippers;
 
 	void Awake ()
@@ -45,6 +47,7 @@ public class MissileBallAI : MonoBehaviour
 		agent = GetComponent <NavMeshAgent> ();
 		rig = GetComponent <Rigidbody> ();
 		stateLight = GetComponent <Light> ();
+		stateLightIntensity = stateLight.intensity;
 
 		groundNormal = GameObject.Find ("GameBoard").transform.up;
 	}
@@ -94,8 +97,6 @@ public class MissileBallAI : MonoBehaviour
 			Debug.Log ("State transition: " + currState.ToString () + " -> " + nextState.ToString ());
 			prevState = currState;
 			currState = nextState;
-
-			// TODO: change color
 		}
 	}
 	
@@ -140,10 +141,16 @@ public class MissileBallAI : MonoBehaviour
 
 	void tracing_update ()
 	{
-
 		if (Vector3.Distance (Vector3.ProjectOnPlane (transform.position, groundNormal),
 							  Vector3.ProjectOnPlane (playerTransform.position, groundNormal)) < tracingStopDistance) {
 			nextState = States.Normal;
+		}
+
+		if (Vector3.Distance (Vector3.ProjectOnPlane (transform.position, groundNormal),
+		                      Vector3.ProjectOnPlane (playerTransform.position, groundNormal)) >= tracingStartDistance) {
+			stateLight.intensity = stateLightIntensity;
+			rig.AddForce (Vector3.down * normalGravity, ForceMode.Acceleration);
+			return;
 		}
 
 		if (tracingTimer < tracingAdjustmentFrequency) {
@@ -152,6 +159,8 @@ public class MissileBallAI : MonoBehaviour
 		} else {
 			tracingTimer = 0.0f;
 		}
+
+		stateLight.intensity = stateLightIntensity * 2f;
 
 		// Calculate AdjustmentForce
 		// AdjustmentForce = DirectionAdjustment + SpeedAdjustment.
