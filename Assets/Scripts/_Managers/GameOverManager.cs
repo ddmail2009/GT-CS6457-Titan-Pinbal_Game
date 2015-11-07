@@ -3,9 +3,11 @@ using System.Collections;
 
 public class GameOverManager : MonoBehaviour
 {
-	Animator anim;
+	public float animationDelay = 3f;
+	public float restartDelay = 6f;
 
-	float restartTimer;
+	Animator anim;
+	bool triggered = false;
 
 	void Awake ()
 	{
@@ -14,14 +16,20 @@ public class GameOverManager : MonoBehaviour
 
 	void Update ()
 	{
-		if (PlayerHealthManager.instance.isDead) {
-			// anim.SetTrigger ("GameOver");
-
-			restartTimer += Time.deltaTime;
-
-			if (restartTimer >= 3.0f) {
-				Application.LoadLevel (Application.loadedLevel);
-			}
+		if (!triggered && PlayerHealthManager.instance.isDead) {
+			triggered = true;
+			Invoke ("PlayAnimation", animationDelay);
+			Invoke ("RestartLevel", restartDelay);
 		}
+	}
+
+	void PlayAnimation ()
+	{
+		anim.SetTrigger ("GameOver");
+	}
+
+	void RestartLevel ()
+	{
+		Application.LoadLevel (Application.loadedLevel);
 	}
 }

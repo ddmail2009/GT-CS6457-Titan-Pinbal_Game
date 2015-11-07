@@ -12,6 +12,8 @@ public class PlayerHealthManager : MonoBehaviour
 
 	public Color minHealthColor, midHealthColor, maxHealthColor;
 
+	public GameObject ragdollTemplate;
+
 	int currentHealth;
 	int midHealth;
 
@@ -47,6 +49,25 @@ public class PlayerHealthManager : MonoBehaviour
 		TakeDamage (healthDropPerSecond);
 	}
 
+
+	void Die ()
+	{
+		isDead = true;
+		ReplacePlayerWithRagdoll ();
+	}
+
+	void ReplacePlayerWithRagdoll ()
+	{
+		GameObject player = GameObject.FindWithTag ("Player");
+		ThirdPersonCameraControllerBeta playerCamera = GameObject.FindWithTag ("ThirdPersonCamera").GetComponent<ThirdPersonCameraControllerBeta> ();
+
+		GameObject ragdoll = Instantiate (ragdollTemplate, player.transform.position, player.transform.rotation) as GameObject;
+		playerCamera.targetLookAt = ragdoll.transform.GetChild (0);
+
+		Destroy (player);
+	}
+
+
 	void UpdateHUD ()
 	{
 		healthSlider.value = currentHealth;
@@ -68,7 +89,7 @@ public class PlayerHealthManager : MonoBehaviour
 		UpdateHUD ();
 
 		if (currentHealth <= 0) {
-			isDead = true;
+			Die ();
 		}
 	}
 
