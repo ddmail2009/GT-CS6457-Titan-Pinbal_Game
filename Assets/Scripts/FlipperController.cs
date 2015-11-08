@@ -19,10 +19,14 @@ public class FlipperController : MonoBehaviour
 	bool holdingAtMax;
 	Quaternion rotationAtMax;
 
+	AudioSource aud;
+	bool flipperUpAudioPlayed = false;
+
 	void Awake ()
 	{
 		flipperRigidbody = GetComponent <Rigidbody> ();
 		flipperHingeJoint = GetComponent <HingeJoint> ();
+		aud = GetComponent<AudioSource> ();
 	}
 
 	void FixedUpdate ()
@@ -30,16 +34,24 @@ public class FlipperController : MonoBehaviour
 		if (Input.GetButton (buttonName)) {
 			isFiring = true;
 
+			if (!flipperUpAudioPlayed) {
+				aud.Play ();
+				flipperUpAudioPlayed = true;
+			}
+
 			if (Mathf.Abs (flipperHingeJoint.angle - flipperHingeJoint.limits.max) < 2.0f) {
 				flipperRigidbody.isKinematic = true;
 			}
 
 			flipperRigidbody.AddForceAtPosition (transform.forward * force, transform.position + offset, ForceMode.Acceleration);
+
 		} else {
 			isFiring = false;
+			flipperUpAudioPlayed = false;
 
 			flipperRigidbody.isKinematic = false;
 			flipperRigidbody.AddForceAtPosition (transform.forward * -force, transform.position + offset, ForceMode.Acceleration);
+
 		}
 	}
 }
