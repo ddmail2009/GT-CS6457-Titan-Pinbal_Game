@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
 	public float jumpHeight = 5.0f;
 	public float groundCheckDistance = 0.3f;
 	public bool freeMovementEnabled = false;
+	public float minEffectiveInput = 0.2f;
 
 	public Camera playerCamera;
 
@@ -42,8 +43,9 @@ public class CharacterMovement : MonoBehaviour
 	{
 		Debug.DrawRay (transform.position, rig.velocity);
 
-		float h = Input.GetAxis ("Horizontal");
-		float v = Input.GetAxis ("Vertical");
+		float h = GetEffectiveInput (Input.GetAxis ("Horizontal"));
+		float v = GetEffectiveInput (Input.GetAxis ("Vertical"));
+
 		bool isCrouching = Input.GetButton ("Crouch");
 
 		if (freeMovementEnabled) {
@@ -144,5 +146,13 @@ public class CharacterMovement : MonoBehaviour
 		if (Physics.Raycast (transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, groundCheckDistance)) {
 			rig.MovePosition (hitInfo.point);
 		}
+	}
+	
+	float GetEffectiveInput (float input)
+	{
+		if (input > -minEffectiveInput && input < minEffectiveInput) {
+			return 0;
+		}
+		return input;
 	}
 }

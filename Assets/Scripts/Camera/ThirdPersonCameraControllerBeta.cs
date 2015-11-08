@@ -16,7 +16,8 @@ public class ThirdPersonCameraControllerBeta: MonoBehaviour
 	public float distanceMin = 3.0f, distanceMax = 10.0f;
 	public float distanceSmooth = 0.05f;
 	public float distanceResumeSmooth = 0.1f;
-
+	
+	public float minEffectiveInput = 0.2f;
 	public float smoothX = 0.05f, smoothY = 0.1f;
 	public float mouseSensitivityX = 5.0f, mouseSensitivityY = 5.0f;
 	public float mouseWheelSensitivity = 5.0f;
@@ -63,8 +64,8 @@ public class ThirdPersonCameraControllerBeta: MonoBehaviour
 
 	void HandleInput ()
 	{
-		mouseX += Input.GetAxis ("Mouse X") * mouseSensitivityX;
-		mouseY -= Input.GetAxis ("Mouse Y") * mouseSensitivityY;
+		mouseX += GetEffectiveInput (Input.GetAxis ("Mouse X")) * mouseSensitivityX;
+		mouseY -= GetEffectiveInput (Input.GetAxis ("Mouse Y")) * mouseSensitivityY;
 
 		mouseY = clampAngle (mouseY, minLimitY, maxLimitY);
 
@@ -214,5 +215,13 @@ public class ThirdPersonCameraControllerBeta: MonoBehaviour
 	float clampAngle (float angle, float angleMin, float angleMax)
 	{
 		return Mathf.Clamp (angle % 360, angleMin, angleMax);
+	}
+
+	float GetEffectiveInput (float input)
+	{
+		if (input > -minEffectiveInput && input < minEffectiveInput) {
+			return 0;
+		}
+		return input;
 	}
 }
