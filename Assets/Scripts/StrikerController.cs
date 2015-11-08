@@ -13,10 +13,13 @@ public class StrikerController : MonoBehaviour
 	float shrinkRate;
 	Vector3 oriScale;
 
+	AudioSource aud;
+
 	void Awake ()
 	{
 		shrinkRate = 0f;
 		oriScale = transform.localScale;
+		aud = GetComponent<AudioSource> ();
 	}
 	
 	void Update ()
@@ -55,5 +58,6 @@ public class StrikerController : MonoBehaviour
 	void RecoverStriker ()
 	{
 		transform.localScale = oriScale;
+		aud.Play ();
 	}
 }

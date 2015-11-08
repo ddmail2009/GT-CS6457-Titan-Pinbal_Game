@@ -12,18 +12,18 @@ public class BallManager : MonoBehaviour
 	bool readyForSpawning = true;
 	int ballTemplateIdx = 0;
 
+	AudioSource aud;
+
 	void Awake ()
 	{
 		instance = this;
+		aud = GetComponent<AudioSource> ();
 	}
 
 	void Update ()
 	{
 		if (readyForSpawning && Input.GetButtonUp ("SpawnBall")) {
-			GameObject newBall = Instantiate (ballTemplates [ballTemplateIdx], ballSpawnPoint.position + transform.up * 0.5f, new Quaternion (15, 0, 0, 0)) as GameObject;
-			newBall.transform.parent = transform;
-			numOfBalls += 1;
-
+			SpawnNewBall ();
 			readyForSpawning = false;
 			Invoke ("GetReadyForSpawning", minSpawnInterval);
 		}
@@ -51,6 +51,14 @@ public class BallManager : MonoBehaviour
 			Debug.Log ("Set BallTemplate as MultiBall 3");
 			ballTemplateIdx = 2;
 		}
+	}
+
+	void SpawnNewBall ()
+	{
+		aud.Play ();
+		GameObject newBall = Instantiate (ballTemplates [ballTemplateIdx], ballSpawnPoint.position + transform.up * 0.5f, new Quaternion (15, 0, 0, 0)) as GameObject;
+		newBall.transform.parent = transform;
+		numOfBalls += 1;
 	}
 
 	void GetReadyForSpawning ()
