@@ -6,7 +6,7 @@ public class DeadZoneTrigger : MonoBehaviour
 	void OnTriggerEnter (Collider col)
 	{
 		if (col.gameObject.tag == "Ball") {
-			Destroy (col.gameObject, 3.0f);
+			Destroy (col.gameObject, 0.5f);
 		}
 	}
 }
