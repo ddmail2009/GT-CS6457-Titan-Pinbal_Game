@@ -19,7 +19,7 @@ Attacker:
 * Control:
   - Spawn ball: p
   - Strike ball: hold '[' and release
-  - Flippers: '/' for left and '.' for right
+  - Flippers: '.' for left and '/' for right
 * Others:
   - Wormhole
     - There are two wormhole entries on middle left and middle right
