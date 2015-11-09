@@ -306,7 +306,7 @@ GameObject:
   - 64: {fileID: 558582136}
   - 23: {fileID: 558582135}
   - 114: {fileID: 558582134}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Ceil
   m_TagString: Ground
   m_Icon: {fileID: 0}
