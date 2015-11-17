@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be14fb66483994abda2c08fd86252c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increasedGravity: 35.2000008
+  increasedGravity: 12
 --- !u!114 &11498608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,6 +401,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: increasedGravity
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

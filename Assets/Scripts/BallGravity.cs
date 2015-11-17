@@ -20,6 +20,6 @@ public class BallGravity : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		rig.AddForce (Vector3.down * increasedGravity, ForceMode.Acceleration);
+		rig.AddForce (-Vector3.forward * increasedGravity, ForceMode.Acceleration);
 	}
 }
