@@ -280,7 +280,6 @@ MonoBehaviour:
   distanceMax: 10
   distanceSmooth: .0500000007
   distanceResumeSmooth: .100000001
-  minEffectiveInput: .200000003
   smoothX: .0500000007
   smoothY: .100000001
   mouseSensitivityX: 4
