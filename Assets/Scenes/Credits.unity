@@ -836,7 +836,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 300}
+  m_SizeDelta: {x: 800, y: 400}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &798834269
 MonoBehaviour:
@@ -861,33 +861,47 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: b1917d2989f0c41d19bd9184335ec281, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum
-    justo eu ipsum auctor gravida. Nunc fringilla molestie blandit. Pellentesque mollis
-    lacinia purus, non pellentesque arcu pharetra vitae. Nam eget aliquam lacus, at
-    consectetur metus. Aenean consectetur ornare sem ac faucibus. Aenean ornare urna
-    non libero dictum, eget sodales diam lobortis. In hac habitasse platea dictumst.
-    Duis posuere lacinia neque, vitae pretium dolor hendrerit at. Nullam bibendum
-    at diam eget gravida. Cras aliquam sem at tempor malesuada. Integer auctor sagittis
-    metus sit amet elementum.
+  m_Text: 'Opening music (Mechanolith) and Credit music (Faceoff) are made by Kevin
+    MacLeod (incompetech.com)
+
+    Licensed under Creative Commons: By Attribution 3.0, http://creativecommons.org/licenses/by/3.0/
 
 
-    Nulla facilisi. Phasellus sit amet ex nec enim fringilla finibus eget eu eros.
-    Fusce molestie dui vel tincidunt cursus. Quisque dignissim nisl et mauris tristique
-    congue nec ac sem. Sed porta mollis eros. Pellentesque id dictum ipsum. Vestibulum
-    mollis suscipit purus vel aliquet. Nulla tempus, tortor a pellentesque elementum,
-    arcu nisi convallis enim, vitae hendrerit neque lacus eu purus. Nulla nisi purus,
-    hendrerit sit amet ante non, pharetra hendrerit orci. Fusce malesuada est quis
-    mi cursus, id malesuada tortor vestibulum. Praesent vitae enim libero. Curabitur
-    ac lectus lacus. Morbi gravida et est eget maximus. Integer eget odio tristique,
-    porta est sed, tristique nulla. Etiam id sagittis nibh.'
+    Font Dashley is licensed under OFL (SIL Open Font License) (https://fontlibrary.org/en/font/dashley)
+
+    Font DejaVu Sans is licensed under Bitstream Vera License (https://fontlibrary.org/en/font/dejavu-sans)
+
+
+    Character model is made by Mixamo fuse
+
+    All character animations are from mixamo.com
+
+
+    Pinball sounds are from http://www.vpforums.org/Tutorials/Sounds/SndLib1.html
+
+    Running sound is from http://soundbible.com/
+
+    Character voices are from http://www.pacdv.com/sounds/index.html
+
+    Rock sound is made by lolamadeus (https://freesound.org/people/lolamadeus/sounds/179365)
+
+    Medkit sound is from https://www.assetstore.unity3d.com/en/#!/content/41150
+
+
+    Camera scripts are based on http://www.3dbuzz.com/training/view/3rd-person-character-system
+
+
+    Rock models are from Yughues Free Rocks (https://www.assetstore.unity3d.com/en/#!/content/13568)
+
+    Medkit model is from Small Survival Pack (https://www.assetstore.unity3d.com/en/#!/content/20565)'
 --- !u!222 &798834270
 CanvasRenderer:
   m_ObjectHideFlags: 0
