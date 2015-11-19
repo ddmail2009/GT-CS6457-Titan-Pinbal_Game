@@ -26,7 +26,7 @@ public class MissileBallAI : MonoBehaviour
 		Tracing,
 		Returning
 	}
-
+	
 	Rigidbody rig;
 	NavMeshAgent agent;
 	Vector3 groundNormal;
@@ -39,19 +39,23 @@ public class MissileBallAI : MonoBehaviour
 	Light stateLight;
 	float stateLightIntensity;
 	GameObject[] flippers;
-
+	
+	ParticleSystem smoke;
+	
 	void Awake ()
 	{
 		flippers = GameObject.FindGameObjectsWithTag ("Flipper");
-
+		
 		agent = GetComponent <NavMeshAgent> ();
 		rig = GetComponent <Rigidbody> ();
 		stateLight = GetComponent <Light> ();
 		stateLightIntensity = stateLight.intensity;
-
+		
 		groundNormal = GameObject.Find ("GameBoard").transform.up;
+		
+		smoke = GetComponentInChildren<ParticleSystem> ();
 	}
-
+	
 	void Update ()
 	{
 		if (currState == nextState) {
@@ -79,7 +83,7 @@ public class MissileBallAI : MonoBehaviour
 				tracing_exit ();
 				break;
 			}
-
+			
 			// call state_enter method
 			switch (nextState) {
 			case States.Normal:
@@ -92,7 +96,7 @@ public class MissileBallAI : MonoBehaviour
 				tracing_enter ();
 				break;
 			}
-
+			
 			// switch state
 			Debug.Log ("State transition: " + currState.ToString () + " -> " + nextState.ToString ());
 			prevState = currState;
@@ -103,17 +107,17 @@ public class MissileBallAI : MonoBehaviour
 	void normal_enter ()
 	{
 		playerTransform = GameObject.FindGameObjectWithTag ("Player").transform;
-
+		
 		distToPlayer = Vector3.Distance (transform.position, playerTransform.position);
 	}
 	
 	void normal_update ()
 	{
 		rig.AddForce (Vector3.down * normalGravity, ForceMode.Acceleration);
-
+		
 		// Conditions to switch to returning state.
 		float currDistToPlayer = Vector3.Distance (playerTransform.position, transform.position);
-
+		
 		if (prevState == States.Tracing && distToPlayer > currDistToPlayer) {
 			if (numOfPursuits > 0) {
 				nextState = States.Returning;
@@ -121,47 +125,50 @@ public class MissileBallAI : MonoBehaviour
 				prevState = States.Normal;
 			}
 		}
-
+		
 		distToPlayer = currDistToPlayer;
 	}
-
+	
 	void normal_exit ()
 	{
 		playerTransform = null;
 	}
-
+	
 	void tracing_enter ()
 	{
 		playerTransform = GameObject.FindGameObjectWithTag ("Player").transform;
 		playerRig = GameObject.FindGameObjectWithTag ("Player").GetComponent <Rigidbody> ();
-
+		
 		stateLight.color = new Color (1.0f, 0f, 0f);
 		stateLight.enabled = true;
+		
+		smoke.Play ();
 	}
-
+	
 	void tracing_update ()
 	{
+		Debug.Log (smoke.isPlaying);
 		if (Vector3.Distance (Vector3.ProjectOnPlane (transform.position, groundNormal),
-							  Vector3.ProjectOnPlane (playerTransform.position, groundNormal)) < tracingStopDistance) {
+		                      Vector3.ProjectOnPlane (playerTransform.position, groundNormal)) < tracingStopDistance) {
 			nextState = States.Normal;
 		}
-
+		
 		if (Vector3.Distance (Vector3.ProjectOnPlane (transform.position, groundNormal),
 		                      Vector3.ProjectOnPlane (playerTransform.position, groundNormal)) >= tracingStartDistance) {
 			stateLight.intensity = stateLightIntensity;
 			rig.AddForce (Vector3.down * normalGravity, ForceMode.Acceleration);
 			return;
 		}
-
+		
 		if (tracingTimer < tracingAdjustmentFrequency) {
 			tracingTimer += Time.deltaTime;
 			return;
 		} else {
 			tracingTimer = 0.0f;
 		}
-
+		
 		stateLight.intensity = stateLightIntensity * 2f;
-
+		
 		// Calculate AdjustmentForce
 		// AdjustmentForce = DirectionAdjustment + SpeedAdjustment.
 		Vector3 targetEstimatedPos = playerTransform.position + playerRig.velocity * tracingAdjustmentFrequency;
@@ -169,62 +176,64 @@ public class MissileBallAI : MonoBehaviour
 		Vector3 desiredVel = (targetEstimatedPos - transform.position) * currVel.magnitude - Physics.gravity * tracingAdjustmentFrequency;
 		desiredVel = Vector3.ProjectOnPlane (desiredVel, groundNormal);
 		Vector3 velDiff = desiredVel - currVel;
-
+		
 		if (velDiff.magnitude <= tracingAdjustmentForce) {
 			velDiff += desiredVel * (tracingAdjustmentForce - velDiff.magnitude);
 		} else {
 			velDiff.Normalize ();
 			velDiff *= tracingAdjustmentForce;
 		}
-
+		
 		rig.AddForce (velDiff, ForceMode.VelocityChange);
 	}
-
+	
 	void tracing_exit ()
 	{
 		playerTransform = null;
 		playerRig = null;
-
+		
 		stateLight.enabled = false;
+		
+		smoke.Stop ();
 	}
-
+	
 	void returning_enter ()
 	{
 		float minDistance = float.MaxValue;
-
+		
 		foreach (GameObject obj in flippers) {
 			Transform t = obj.transform;
 			float targetDistance = Vector3.Distance (transform.position, t.position);
-
+			
 			if (targetDistance < minDistance) {
 				selectedTarget = t;
 				minDistance = targetDistance;
 			}
 		}
-
+		
 		Debug.Log (selectedTarget);
-
+		
 		agent.enabled = true;
-
+		
 		Vector3 rigVelocity = rig.velocity;
 		rig.velocity = Vector3.zero;
 		agent.velocity = rigVelocity;
 	}
-
+	
 	void returning_update ()
 	{
 		agent.destination = selectedTarget.position;
-
+		
 		if (Vector3.Distance (transform.position, selectedTarget.position) < returningStopDistance) {
 			nextState = States.Normal;
 		}
 	}
-
+	
 	void returning_exit ()
 	{
 		rig.AddForce (agent.velocity, ForceMode.VelocityChange);
 		agent.enabled = false;
-
+		
 		selectedTarget = null;
 	}
 	

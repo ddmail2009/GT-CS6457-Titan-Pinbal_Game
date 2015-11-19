@@ -10,16 +10,20 @@ public class StrikerController : MonoBehaviour
 	public float shrinkRateInSecond = 1f;
 	public float maxShrinkRate = 0.75f;
 
-	float shrinkRate;
+	public float maxStrikeDistance = 4.5f;
+
+	float shrinkRate = 0f;
 	Vector3 oriScale;
+
+	ParticleSystem strikeEffect;
 
 	AudioSource aud;
 
 	void Awake ()
 	{
-		shrinkRate = 0f;
 		oriScale = transform.localScale;
 		aud = GetComponent<AudioSource> ();
+		strikeEffect = GetComponentInChildren<ParticleSystem> ();
 	}
 	
 	void Update ()
@@ -42,14 +46,15 @@ public class StrikerController : MonoBehaviour
 	{
 		RaycastHit hit;
 
-		if (Physics.Raycast (transform.position, transform.forward, out hit)) {
+		if (Physics.Raycast (transform.position, transform.forward, out hit, maxStrikeDistance)) {
 			if (hit.collider.tag == targetTag) {
 				float force = shrinkRate / maxShrinkRate * maxForce;
 				hit.collider.attachedRigidbody.AddForce (transform.forward * force, ForceMode.Impulse);
+				strikeEffect.Play ();
 			}
 		}
 	}
-	
+
 	void ShrinkStriker ()
 	{
 		transform.localScale = oriScale - new Vector3 (0, 0, oriScale.z * shrinkRate);
