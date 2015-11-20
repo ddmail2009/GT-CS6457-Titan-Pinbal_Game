@@ -11,6 +11,7 @@ using System.Collections;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public GameObject bomb;
 	public float jumpHeight = 5.0f;
 	public float groundCheckDistance = 0.3f;
 	public bool freeMovementEnabled = false;
@@ -44,8 +45,14 @@ public class CharacterMovement : MonoBehaviour
 
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
+        if (Input.GetKeyDown("left shift"))
+        {
 
-		bool isCrouching = Input.GetButton ("Crouch");
+            Vector3 positionBomb = new Vector3(Mathf.Round(transform.position.x), 1, Mathf.Round(transform.position.z));
+            Instantiate(bomb, positionBomb, Quaternion.identity);
+        }
+
+        bool isCrouching = Input.GetButton ("Crouch");
 
 		if (freeMovementEnabled) {
 			anim.applyRootMotion = false;

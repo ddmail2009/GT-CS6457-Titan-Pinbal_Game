@@ -3801,6 +3801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86eefa5a9ca514f5485a84871542d89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bomb: {fileID: 100000, guid: 4b23d71fce2feb94d967bc6676f44b4e, type: 2}
   jumpHeight: 5
   groundCheckDistance: .300000012
   freeMovementEnabled: 0
