@@ -8,7 +8,6 @@ TagManager:
   - Ground
   - Flipper
   - ThirdPersonCamera
-  - PlayerItem
   layers:
   - Default
   - TransparentFX
