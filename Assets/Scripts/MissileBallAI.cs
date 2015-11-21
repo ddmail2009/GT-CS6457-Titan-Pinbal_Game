@@ -58,6 +58,8 @@ public class MissileBallAI : MonoBehaviour
 	
 	void Update ()
 	{
+		PlaySmoke ();
+
 		if (currState == nextState) {
 			switch (currState) {
 			case States.Normal:
@@ -103,7 +105,19 @@ public class MissileBallAI : MonoBehaviour
 			currState = nextState;
 		}
 	}
-	
+
+
+	void PlaySmoke ()
+	{
+		if (currState == States.Tracing && !smoke.isPlaying) {
+			smoke.Play ();
+		}
+		if (currState != States.Tracing && smoke.isPlaying) {
+			smoke.Stop ();
+		}
+	}
+
+
 	void normal_enter ()
 	{
 		playerTransform = GameObject.FindGameObjectWithTag ("Player").transform;
@@ -141,13 +155,10 @@ public class MissileBallAI : MonoBehaviour
 		
 		stateLight.color = new Color (1.0f, 0f, 0f);
 		stateLight.enabled = true;
-		
-		smoke.Play ();
 	}
 	
 	void tracing_update ()
 	{
-		Debug.Log (smoke.isPlaying);
 		if (Vector3.Distance (Vector3.ProjectOnPlane (transform.position, groundNormal),
 		                      Vector3.ProjectOnPlane (playerTransform.position, groundNormal)) < tracingStopDistance) {
 			nextState = States.Normal;
@@ -193,8 +204,6 @@ public class MissileBallAI : MonoBehaviour
 		playerRig = null;
 		
 		stateLight.enabled = false;
-		
-		smoke.Stop ();
 	}
 	
 	void returning_enter ()
