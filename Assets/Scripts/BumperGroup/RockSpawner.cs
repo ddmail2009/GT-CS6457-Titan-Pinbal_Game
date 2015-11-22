@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RockSpawner : Effect {
+public class RockSpawner : Effect
+{
 	public GameObject player;
 	public GameObject rockTemplate;
 	public float effectTime = 10f;
@@ -15,13 +16,15 @@ public class RockSpawner : Effect {
 
 	// Use this for initialization
 
-	void Awake () {
-		GameObject ground = GameObject.FindGameObjectsWithTag("Ground")[0];
+	void Awake ()
+	{
+		GameObject ground = GameObject.FindGameObjectsWithTag ("Ground") [0];
 		bounds = ground.GetComponent<Renderer> ().bounds;
 		aud = GetComponent<AudioSource> ();
 	}
 
-	void OnEnable() {
+	void OnEnable ()
+	{
 		effectTimer = effectTime;
 		fadeOutTime = effectTime / 10;
 		timer = 0;
@@ -29,47 +32,53 @@ public class RockSpawner : Effect {
 		aud.Play ();
 	}
 
-	public override void BeginEffect(BumperManager mgr) {
+	public override void BeginEffect (BumperManager mgr)
+	{
 		manager = mgr; 
 		enabled = true;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		if (effectTimer <= -endDelay) {
 			enabled = false;
-			manager.onEffectEnd();
+
+			if (manager != null) {
+				manager.onEffectEnd ();
+			}
 		} else {
 			effectTimer -= Time.deltaTime;
 		}
 
 		if (effectTimer <= fadeOutTime) {
-			aud.volume = Mathf.Lerp(1, 0, (fadeOutTime - timer)/(endDelay + fadeOutTime));
+			aud.volume = Mathf.Lerp (1, 0, (fadeOutTime - timer) / (endDelay + fadeOutTime));
 		}
 
 		if (effectTimer > 0 && timer <= 0) {
 			for (int i = 0; i < 10; i++) {
-				RandomRock();
+				RandomRock ();
 			}
-			timer = Random.Range(0.5f, 1f);
+			timer = Random.Range (0.5f, 1f);
 		} else {
 			timer -= Time.deltaTime;
 		}
 	}
 
-	void RandomRock() {
+	void RandomRock ()
+	{
 		float y, x, z;
-		y = Random.Range(30f, 35f);
+		y = Random.Range (30f, 35f);
 		if (Random.value < 0.5f) {
-			x = Random.Range(bounds.center.x - bounds.extents.x, bounds.center.x + bounds.extents.x);
-			z = Random.Range(bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z);
+			x = Random.Range (bounds.center.x - bounds.extents.x, bounds.center.x + bounds.extents.x);
+			z = Random.Range (bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z);
 		} else {
-			Rigidbody playerRigibody = player.GetComponent<Rigidbody>();
+			Rigidbody playerRigibody = player.GetComponent<Rigidbody> ();
 			x = player.transform.position.x + playerRigibody.velocity.x;
 			z = player.transform.position.z + playerRigibody.velocity.z;
 		}
-		GameObject rock = Instantiate(rockTemplate, new Vector3(x, y, z), Quaternion.identity) as GameObject;
+		GameObject rock = Instantiate (rockTemplate, new Vector3 (x, y, z), Quaternion.identity) as GameObject;
 		RockControl rockControl = rock.GetComponent <RockControl> ();
-		rockControl.size = Random.Range(1f, 2f);
+		rockControl.size = Random.Range (1f, 2f);
 	}
 }
