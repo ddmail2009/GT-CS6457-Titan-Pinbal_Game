@@ -2785,7 +2785,7 @@ HingeJoint:
   m_Anchor: {x: 4, y: -.5, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.95352983, y: -3.93332911, z: -13.3270845}
+  m_ConnectedAnchor: {x: 3.95352983, y: -.349999994, z: -13.890996}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2817,7 +2817,7 @@ HingeJoint:
   m_Anchor: {x: -4, y: .5, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -5.45238638, y: -3.29099846, z: -13.6344662}
+  m_ConnectedAnchor: {x: -5.45238638, y: .349999994, z: -14.021656}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -4573,7 +4573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  rockTemplate: {fileID: 169578, guid: 08bf0f79962584d89ae2b7c25faeccac, type: 2}
+  rockTemplate: {fileID: 124488, guid: 86c101f93240845238c9d5a3cd6bbb07, type: 2}
   effectTime: 10
   endDelay: 5
 --- !u!114 &11409776
