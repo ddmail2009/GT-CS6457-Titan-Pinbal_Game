@@ -58,8 +58,6 @@ public class MissileBallAI : MonoBehaviour
 	
 	void Update ()
 	{
-		PlaySmoke ();
-
 		if (currState == nextState) {
 			switch (currState) {
 			case States.Normal:
@@ -104,15 +102,16 @@ public class MissileBallAI : MonoBehaviour
 			prevState = currState;
 			currState = nextState;
 		}
+
+		UpdateEffect ();
 	}
 
 
-	void PlaySmoke ()
+	void UpdateEffect ()
 	{
 		if (currState == States.Tracing && !smoke.isPlaying) {
 			smoke.Play ();
-		}
-		if (currState != States.Tracing && smoke.isPlaying) {
+		} else if (currState != States.Tracing && smoke.isPlaying) {
 			smoke.Stop ();
 		}
 	}
