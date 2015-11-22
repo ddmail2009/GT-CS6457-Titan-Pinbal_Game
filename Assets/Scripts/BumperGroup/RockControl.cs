@@ -4,12 +4,12 @@ using System.Collections;
 public class RockControl : MonoBehaviour
 {
 	public float size;
+	public float timeToLive = 5;
 
 	private Rigidbody rockBody;
 	private int groundLayerMask;
 	private AudioSource aud;
 	private bool played = false;
-	private float timeToLive = 5;
 	private float timer;
 
 	// Use this for initialization
