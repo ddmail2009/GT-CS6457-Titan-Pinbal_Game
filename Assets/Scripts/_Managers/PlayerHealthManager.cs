@@ -20,7 +20,9 @@ public class PlayerHealthManager : MonoBehaviour
 	Slider healthSlider;
 	Text healthText;
 	Image healthSliderFill;
-	
+
+	GameObject ragdoll = null;
+
 	void Awake ()
 	{
 		instance = this;
@@ -61,12 +63,19 @@ public class PlayerHealthManager : MonoBehaviour
 		GameObject player = GameObject.FindWithTag ("Player");
 		ThirdPersonCameraControllerBeta playerCamera = GameObject.FindWithTag ("ThirdPersonCamera").GetComponent<ThirdPersonCameraControllerBeta> ();
 
-		GameObject ragdoll = Instantiate (ragdollTemplate, player.transform.position, player.transform.rotation) as GameObject;
-		playerCamera.targetLookAt = ragdoll.transform.GetChild (0);
+		ragdoll = Instantiate (ragdollTemplate, player.transform.position, player.transform.rotation) as GameObject;
+		playerCamera.targetLookAt = ragdoll.transform;
 
 		Destroy (player);
 	}
 
+	void Update ()
+	{
+		if (ragdoll != null) {
+			Debug.Log ("ragdoll");
+			Debug.Log (ragdoll.transform.position);
+		}
+	}
 
 	void UpdateHUD ()
 	{
