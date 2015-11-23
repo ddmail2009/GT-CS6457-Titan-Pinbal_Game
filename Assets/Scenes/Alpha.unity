@@ -529,7 +529,7 @@ MonoBehaviour:
   minHealthColor: {r: .886274517, g: .196078435, b: .196078435, a: 1}
   midHealthColor: {r: .905882359, g: .917647064, b: .20784314, a: 1}
   maxHealthColor: {r: .149019614, g: .788235307, b: .419607848, a: 1}
-  ragdollTemplate: {fileID: 105168, guid: 6388c515e7412488aa1e5c356664dcc1, type: 2}
+  ragdollTemplate: {fileID: 177356, guid: 590a639a3e6cd49fbab39c84ef0c8506, type: 2}
 --- !u!1 &844353707
 GameObject:
   m_ObjectHideFlags: 0
