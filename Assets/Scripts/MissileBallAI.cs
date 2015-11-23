@@ -126,7 +126,7 @@ public class MissileBallAI : MonoBehaviour
 	
 	void normal_update ()
 	{
-		rig.AddForce (Vector3.down * normalGravity, ForceMode.Acceleration);
+		rig.AddForce (-Vector3.forward * normalGravity, ForceMode.Acceleration);
 		
 		// Conditions to switch to returning state.
 		float currDistToPlayer = Vector3.Distance (playerTransform.position, transform.position);
@@ -166,7 +166,7 @@ public class MissileBallAI : MonoBehaviour
 		if (Vector3.Distance (Vector3.ProjectOnPlane (transform.position, groundNormal),
 		                      Vector3.ProjectOnPlane (playerTransform.position, groundNormal)) >= tracingStartDistance) {
 			stateLight.intensity = stateLightIntensity;
-			rig.AddForce (Vector3.down * normalGravity, ForceMode.Acceleration);
+			rig.AddForce (-Vector3.forward * normalGravity, ForceMode.Acceleration);
 			return;
 		}
 		

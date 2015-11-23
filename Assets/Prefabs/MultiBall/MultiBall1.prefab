@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75d5cc9efefd4f879f5dc6451270aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalGravity: 35.2000008
+  normalGravity: 12
   tracingAdjustmentFrequency: .100000001
   tracingAdjustmentForce: 2.5
   tracingStartDistance: Infinity
@@ -1521,7 +1521,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: normalGravity
-      value: 35.2000008
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
