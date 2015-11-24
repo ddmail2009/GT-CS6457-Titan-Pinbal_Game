@@ -304,7 +304,6 @@ GameObject:
   - 33: {fileID: 558582137}
   - 64: {fileID: 558582136}
   - 23: {fileID: 558582135}
-  - 114: {fileID: 558582134}
   m_Layer: 2
   m_Name: Ceil
   m_TagString: Ground
@@ -319,23 +318,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 558582132}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: 1.60000002, z: 0}
+  m_LocalPosition: {x: 0, y: 2.29999995, z: 0}
   m_LocalScale: {x: 2.55239916, y: 1, z: 3.66139364}
   m_Children: []
   m_Father: {fileID: 844353708}
   m_RootOrder: 0
---- !u!114 &558582134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 558582132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06094bf35074443fc9659336309b68c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCollider: {fileID: 1489200138}
 --- !u!23 &558582135
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1122,11 +1109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationDelay: 3
   restartDelay: 6
---- !u!136 &1489200138 stripped
-CapsuleCollider:
-  m_PrefabParentObject: {fileID: 13634742, guid: 1b439f15e17ea4627897dff85c51c5e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1944173012}
 --- !u!1 &1520659165
 GameObject:
   m_ObjectHideFlags: 0
