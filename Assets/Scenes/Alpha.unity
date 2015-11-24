@@ -838,22 +838,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1002633870}
---- !u!1 &1097957603 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 103246, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-  m_PrefabInternal: {fileID: 594338473}
---- !u!114 &1097957607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1097957603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e63a50f725d0426d950690e481bb7c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerButton: RockEffect
 --- !u!1 &1128279320
 GameObject:
   m_ObjectHideFlags: 0
