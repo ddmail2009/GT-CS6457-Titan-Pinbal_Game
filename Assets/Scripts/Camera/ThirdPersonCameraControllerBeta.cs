@@ -25,6 +25,8 @@ public class ThirdPersonCameraControllerBeta: MonoBehaviour
 	public float occlusionDistanceStep = 0.05f;
 	public int maxOcclusionChecks = 50;
 
+	public bool reverseLeftRight = false;
+
 	float mouseX = 0f, mouseY = 0f;
 	float velX = 0f, velY = 0f, velZ = 0f;
 	float velDistance = 0f;
@@ -63,7 +65,11 @@ public class ThirdPersonCameraControllerBeta: MonoBehaviour
 
 	void HandleInput ()
 	{
-		mouseX += Input.GetAxis ("Mouse X") * mouseSensitivityX;
+		if (reverseLeftRight) {
+			mouseX -= Input.GetAxis ("Mouse X") * mouseSensitivityX;
+		} else {
+			mouseX += Input.GetAxis ("Mouse X") * mouseSensitivityX;
+		}
 		mouseY -= Input.GetAxis ("Mouse Y") * mouseSensitivityY;
 
 		mouseY = clampAngle (mouseY, minLimitY, maxLimitY);

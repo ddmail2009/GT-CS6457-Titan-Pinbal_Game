@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
 	public float jumpHeight = 5.0f;
 	public float groundCheckDistance = 0.3f;
 	public bool freeMovementEnabled = false;
+	public bool reverseLeftRight = false;
 
 	public Camera playerCamera;
 
@@ -46,6 +47,10 @@ public class CharacterMovement : MonoBehaviour
 		float v = Input.GetAxis ("Vertical");
 
 		bool isCrouching = Input.GetButton ("Crouch");
+
+		if (reverseLeftRight) {
+			h = -h;
+		}
 
 		if (freeMovementEnabled) {
 			anim.applyRootMotion = false;

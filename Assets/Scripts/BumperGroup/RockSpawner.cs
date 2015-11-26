@@ -4,25 +4,25 @@ using System.Collections;
 public class RockSpawner : Effect
 {
 	public GameObject player;
+	public GameObject ground;
 	public GameObject rockTemplate;
 	public float effectTime = 10f;
 	public float endDelay = 5f;
-
+	
 	private float timer = 0f;
 	private float effectTimer = 0f;
 	private float fadeOutTime;
 	private Bounds bounds;
 	private AudioSource aud;
-
+	
 	// Use this for initialization
-
+	
 	void Awake ()
 	{
-		GameObject ground = GameObject.FindGameObjectsWithTag ("Ground") [0];
 		bounds = ground.GetComponent<Renderer> ().bounds;
 		aud = GetComponent<AudioSource> ();
 	}
-
+	
 	void OnEnable ()
 	{
 		effectTimer = effectTime;
@@ -31,30 +31,21 @@ public class RockSpawner : Effect
 		aud.volume = 1f;
 		aud.Play ();
 	}
-
-	public override void BeginEffect (BumperManager mgr)
-	{
-		manager = mgr; 
-		enabled = true;
-	}
-
+	
 	// Update is called once per frame
 	void Update ()
 	{
 		if (effectTimer <= -endDelay) {
 			enabled = false;
-
-			if (manager != null) {
-				manager.onEffectEnd ();
-			}
+			manager.onEffectEnd ();
 		} else {
 			effectTimer -= Time.deltaTime;
 		}
-
+		
 		if (effectTimer <= fadeOutTime) {
-			aud.volume = Mathf.Lerp (1, 0, (fadeOutTime - timer) / (endDelay + fadeOutTime));
+			aud.volume = Mathf.Lerp (1, 0, (fadeOutTime - effectTimer) / (endDelay + fadeOutTime));
 		}
-
+		
 		if (effectTimer > 0 && timer <= 0) {
 			for (int i = 0; i < 10; i++) {
 				RandomRock ();
@@ -64,7 +55,7 @@ public class RockSpawner : Effect
 			timer -= Time.deltaTime;
 		}
 	}
-
+	
 	void RandomRock ()
 	{
 		float y, x, z;
