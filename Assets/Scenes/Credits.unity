@@ -903,7 +903,11 @@ MonoBehaviour:
 
     Rock models are from Yughues Free Rocks (https://www.assetstore.unity3d.com/en/#!/content/13568)
 
-    Medkit model is from Small Survival Pack (https://www.assetstore.unity3d.com/en/#!/content/20565)'
+    Medkit model is from Small Survival Pack (https://www.assetstore.unity3d.com/en/#!/content/20565)
+
+
+    KY Magic Effects Free is used for shockwave effect. GradientGUIBars is used for
+    Manabar.'
 --- !u!222 &798834270
 CanvasRenderer:
   m_ObjectHideFlags: 0
