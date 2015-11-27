@@ -21,6 +21,7 @@ public class CharacterMovement : MonoBehaviour
 	Animator anim;
 	Rigidbody rig;
 	CapsuleCollider col;
+	CharacterShockWave shockwave;
 	
 	float colHeight;
 	Vector3 colCenter, desiredColCenter;
@@ -33,6 +34,8 @@ public class CharacterMovement : MonoBehaviour
 		anim = GetComponent <Animator> ();
 		rig = GetComponent <Rigidbody> ();
 		col = GetComponent<CapsuleCollider> ();
+		shockwave = GetComponent <CharacterShockWave> ();
+
 		colHeight = col.height;
 		desiredColCenter = colCenter = col.center;
 
@@ -47,6 +50,7 @@ public class CharacterMovement : MonoBehaviour
 		float v = Input.GetAxis ("Vertical");
 
 		bool isCrouching = Input.GetButton ("Crouch");
+		bool isStartCrouching = Input.GetButtonDown ("Crouch");
 
 		if (reverseLeftRight) {
 			h = -h;
@@ -63,6 +67,7 @@ public class CharacterMovement : MonoBehaviour
 		HandleMovement (h, v);
 		HandleJumping (h, v);
 		HandleCrouch (isCrouching);
+		HandleShockwave (isStartCrouching);
 
 		UpdateColliderHeight ();
 	}
@@ -109,6 +114,13 @@ public class CharacterMovement : MonoBehaviour
 	void HandleCrouch (bool isCrouching)
 	{
 		anim.SetBool ("IsCrouching", isCrouching);
+	}
+
+	void HandleShockwave (bool isStartingCrouching)
+	{
+		if (isStartingCrouching) {
+			shockwave.enabled = true;
+		}
 	}
 
 	void UpdateColliderHeight ()
