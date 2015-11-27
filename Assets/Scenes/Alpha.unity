@@ -1124,6 +1124,10 @@ Prefab:
       propertyPath: effectImage
       value: 
       objectReference: {fileID: 1796163676}
+    - target: {fileID: 8211352, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99af2892c259043ad89de4d0211e95ff, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
   m_IsPrefabParent: 0
