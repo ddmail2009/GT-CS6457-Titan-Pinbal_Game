@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f59d51a2354c454ea9b9d527e5ec208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1000
+  startingHealth: 100
   healthDropPerSecond: 2
   isDead: 0
   minHealthColor: {r: .886274517, g: .196078435, b: .196078435, a: 1}
