@@ -98,7 +98,6 @@ public class MissileBallAI : MonoBehaviour
 			}
 			
 			// switch state
-			Debug.Log ("State transition: " + currState.ToString () + " -> " + nextState.ToString ());
 			prevState = currState;
 			currState = nextState;
 		}
@@ -218,8 +217,6 @@ public class MissileBallAI : MonoBehaviour
 				minDistance = targetDistance;
 			}
 		}
-		
-		Debug.Log (selectedTarget);
 		
 		agent.enabled = true;
 		
