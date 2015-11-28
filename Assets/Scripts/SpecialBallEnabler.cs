@@ -3,6 +3,19 @@ using System.Collections;
 
 public class SpecialBallEnabler : MonoBehaviour
 {
+	public float[] tracingStartDistances;
+	public int[] numOfPursuits;
+	public float[] probabilities;
+
+	float totalProbability = 0;
+
+	void Awake ()
+	{
+		foreach (float p in probabilities) {
+			totalProbability += p;
+		}
+	}
+
 	void OnTriggerEnter (Collider col)
 	{
 		if (col.gameObject.tag == "Ball") {
@@ -10,9 +23,32 @@ public class SpecialBallEnabler : MonoBehaviour
 				return;
 			}
 
-			// Currently, we have only one kind of special balls.
-			col.gameObject.GetComponent<BallGravity> ().enabled = false;
-			col.gameObject.GetComponent<MissileBallAI> ().enabled = true;
+			MissileBallAI mbai = col.gameObject.GetComponent<MissileBallAI> ();
+
+			if (!mbai.enabled) {
+				col.gameObject.GetComponent<BallGravity> ().enabled = false;
+
+				int idx = getRandomIdx ();
+				mbai.tracingStartDistance = tracingStartDistances [idx];
+				mbai.numOfPursuits = numOfPursuits [idx];
+
+				mbai.enabled = true;
+			}
 		}
+	}
+
+	int getRandomIdx ()
+	{
+		float p = Random.Range (0, totalProbability);
+
+		for (var i = 0; i < probabilities.Length; ++i) {
+			if (p <= probabilities [i]) {
+				return i;
+			}
+
+			p -= probabilities [i];
+		}
+
+		return probabilities.Length - 1;
 	}
 }

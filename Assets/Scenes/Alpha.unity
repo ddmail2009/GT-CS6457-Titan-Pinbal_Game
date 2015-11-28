@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f59d51a2354c454ea9b9d527e5ec208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 1000
   healthDropPerSecond: 2
   isDead: 0
   minHealthColor: {r: .886274517, g: .196078435, b: .196078435, a: 1}
@@ -1057,6 +1057,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 844353708}
     m_Modifications:
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: probabilities.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: numOfPursuits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: tracingStartDistances.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 459036, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1113,6 +1125,42 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 99af2892c259043ad89de4d0211e95ff, type: 3}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: probabilities.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: probabilities.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: probabilities.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: numOfPursuits.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: numOfPursuits.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: tracingStartDistances.Array.data[0]
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: tracingStartDistances.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415796, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: tracingStartDistances.Array.data[2]
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497006, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: ballTemplate
+      value: 
+      objectReference: {fileID: 116654, guid: ea0629f1d9aa44bd7b9f1039747f25ad, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
   m_IsPrefabParent: 0
