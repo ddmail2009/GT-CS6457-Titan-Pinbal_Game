@@ -21,7 +21,7 @@ public class ItemSpawnManager : MonoBehaviour
 
 	void Spawn ()
 	{
-		if (PlayerHealthManager.instance.isDead == true) {
+		if (VersusManager.instance.isEnded) {
 			CancelInvoke ("Spawn");
 			return;
 		}

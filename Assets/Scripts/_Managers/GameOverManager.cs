@@ -16,7 +16,7 @@ public class GameOverManager : MonoBehaviour
 
 	void Update ()
 	{
-		if (!triggered && PlayerHealthManager.instance.isDead) {
+		if (!triggered && VersusManager.instance.isEnded) {
 			triggered = true;
 			Invoke ("PlayAnimation", animationDelay);
 			Invoke ("RestartLevel", restartDelay);
