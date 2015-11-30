@@ -24,6 +24,7 @@ GameObject:
   - 198: {fileID: 19819680}
   - 199: {fileID: 19954170}
   - 114: {fileID: 11423788}
+  - 114: {fileID: 11413188}
   m_Layer: 0
   m_Name: MultiBallFinal
   m_TagString: Ball
@@ -291,6 +292,17 @@ MonoBehaviour:
   tracingStopDistance: 1
   returningStopDistance: 3
   numOfPursuits: 5
+--- !u!114 &11413188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8889cc71d5e604ba9bc2aeaada9e0d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11423788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1459,6 +1471,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f95b9f363f85347039afe2e86199c785, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116654}
