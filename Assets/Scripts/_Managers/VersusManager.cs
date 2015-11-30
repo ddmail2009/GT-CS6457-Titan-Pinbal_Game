@@ -32,6 +32,16 @@ public class VersusManager : MonoBehaviour
 	{
 		if (isStarting && !isEnded) {
 			currValue -= decaySpeed * Time.deltaTime;
+
+			if (currValue < minValue) {
+				currValue = minValue;
+			} else if (currValue > maxValue) {
+				currValue = maxValue;
+			}
+		}
+
+		if (currValue <= minValue || currValue >= maxValue) {
+			isEnded = true;
 		}
 	}
 }
