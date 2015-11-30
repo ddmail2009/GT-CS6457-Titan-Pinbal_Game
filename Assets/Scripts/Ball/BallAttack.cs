@@ -16,7 +16,7 @@ public class BallAttack : MonoBehaviour
 	void OnCollisionEnter (Collision col)
 	{
 		if (isDetecting && col.gameObject.tag == "Player") {
-			PlayerHealthManager.instance.TakeDamage (attackDamage);
+			VersusManager.instance.ChangeValueBy (-attackDamage);
 			isDetecting = false;
 
 			Invoke ("ResumeCollision", 3.0f);

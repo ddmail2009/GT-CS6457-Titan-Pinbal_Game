@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Flipper
   - ThirdPersonCamera
+  - Item
+  - Box
   layers:
   - Default
   - TransparentFX

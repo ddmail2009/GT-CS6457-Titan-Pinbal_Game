@@ -44,7 +44,7 @@ public class RockControl : MonoBehaviour
 			aud.Play ();
 			played = true;
 		} else if (col.gameObject.tag == "Player") {
-			PlayerHealthManager.instance.TakeDamage (10);
+			VersusManager.instance.ChangeValueBy (-10f);
 		}
 	}
 }

@@ -17,7 +17,7 @@ public class MedKitHeal : MonoBehaviour
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.gameObject.tag == targetTag) {
-			PlayerHealthManager.instance.Heal (healValue);
+			VersusManager.instance.ChangeValueBy (healValue);
 
 			AudioSource.PlayClipAtPoint (clip, transform.position);
 			Destroy (gameObject, destroySpeed);

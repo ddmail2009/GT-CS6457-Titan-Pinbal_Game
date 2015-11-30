@@ -17,7 +17,7 @@ public class Explosion : MonoBehaviour
 
 		foreach (Collider collider in hitColliders) {
 			if (collider.gameObject.tag == "Player") {
-				PlayerHealthManager.instance.Heal (-playerDamage);
+				VersusManager.instance.ChangeValueBy (-playerDamage);
 			} else if (collider.gameObject.tag == "PlayerItem") {
 				Destroy (collider.gameObject);
 			} else if (collider.gameObject.tag == "Box") {
