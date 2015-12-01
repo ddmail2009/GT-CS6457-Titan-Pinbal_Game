@@ -17,6 +17,9 @@ public class PortalController : MonoBehaviour
 	[Tooltip("The direction which is allowed to enter the portal")]
 	public Vector3
 		enterLocalDirection = Vector3.forward;
+	[Tooltip("The least angle to portal surface to enter the portal")]
+	public float
+		enterAngle = 15;
 	[Tooltip("The linked portal gameobject")]
 	public GameObject[]
 		linkPortals = null;
@@ -67,13 +70,19 @@ public class PortalController : MonoBehaviour
 		//DebugExtension.DrawCone (transform.position, td, Color.red, 60);
 	}
 
+	bool isValidAngle (float angle)
+	{
+		return angle >= 90 + enterAngle || angle <= 90 - enterAngle;
+	}
+
 	void OnTriggerEnter (Collider col)
 	{
 		if (col.tag.Equals (objectTag)) {
-			print (col.tag);
+
 			Vector3 vin = col.attachedRigidbody.GetRelativePointVelocity (transform.position);
 			float angle = Vector3.Angle (vin, enterWorldDirection);
-			if (90 + 30 <= angle && angle <= 270 + 30) {
+
+			if (isValidAngle (angle)) {
 				if (isOpen ()) {
 					GameObject portal = null;
 					int foundPortal = 0;
