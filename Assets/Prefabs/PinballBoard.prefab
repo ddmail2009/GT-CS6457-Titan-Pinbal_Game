@@ -874,6 +874,7 @@ GameObject:
   - 114: {fileID: 11438462}
   - 59: {fileID: 5976866}
   - 82: {fileID: 8222984}
+  - 95: {fileID: 9572150}
   m_Layer: 8
   m_Name: LeftFlipper
   m_TagString: Flipper
@@ -6484,6 +6485,23 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!95 &9572150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169326}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11402316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6496,7 +6514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Ball
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -6531,7 +6551,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Ball
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -6584,7 +6606,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -6617,7 +6641,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Ball
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -6779,7 +6805,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Ball
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals:
   - {fileID: 187960}
   - {fileID: 195102}
@@ -6808,7 +6836,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals:
   - {fileID: 187960}
   - {fileID: 195102}
@@ -7006,7 +7036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -7027,7 +7059,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Ball
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals:
   - {fileID: 187960}
   - {fileID: 195102}
@@ -7096,7 +7130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -7230,7 +7266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Ball
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -7267,7 +7305,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals:
   - {fileID: 187960}
   - {fileID: 195102}
@@ -7307,7 +7347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -7328,7 +7370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Ball
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0
@@ -7364,7 +7408,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
+  objectTagToOpen: Ball
   enterLocalDirection: {x: 0, y: 0, z: 1}
+  enterAngle: 15
   linkPortals: []
   DuplicateNumber: 1
   openOnStart: 0

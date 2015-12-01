@@ -11,6 +11,8 @@ public class VersusManager : MonoBehaviour
 
 	public bool isStarting = false, isEnded = false;
 
+	public GameObject ragdollTemplate;
+	
 	public void ChangeValueBy (float diff)
 	{
 		currValue += diff;
@@ -30,7 +32,11 @@ public class VersusManager : MonoBehaviour
 	
 	void Update ()
 	{
-		if (isStarting && !isEnded) {
+		if (isEnded) {
+			return;
+		}
+
+		if (isStarting) {
 			currValue -= decaySpeed * Time.deltaTime;
 
 			if (currValue < minValue) {
@@ -42,6 +48,22 @@ public class VersusManager : MonoBehaviour
 
 		if (currValue <= minValue || currValue >= maxValue) {
 			isEnded = true;
+
+			if (currValue <= minValue) {
+				ReplacePlayerWithRagdoll ();
+			}
 		}
 	}
+
+	void ReplacePlayerWithRagdoll ()
+	{
+		GameObject player = GameObject.FindWithTag ("Player");
+		ThirdPersonCameraControllerBeta playerCamera = GameObject.FindWithTag ("ThirdPersonCamera").GetComponent<ThirdPersonCameraControllerBeta> ();
+		
+		GameObject ragdoll = Instantiate (ragdollTemplate, player.transform.position, player.transform.rotation) as GameObject;
+		playerCamera.targetLookAt = ragdoll.transform.Find ("LookAt");
+
+		Destroy (player);
+	}
 }
+

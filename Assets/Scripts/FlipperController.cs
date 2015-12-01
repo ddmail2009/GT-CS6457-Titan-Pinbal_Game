@@ -22,16 +22,47 @@ public class FlipperController : MonoBehaviour
 	AudioSource aud;
 	bool flipperUpAudioPlayed = false;
 
+	Animator anim;
+	float damageTimer, damageDuration = 0;
+	bool isDamaged = false;
+
+	public void TakeDamage (float duration)
+	{
+		if (isDamaged) {
+			damageDuration += duration;
+		} else {
+			damageTimer = 0;
+			damageDuration = duration;
+
+			isDamaged = true;
+
+			anim.SetBool ("IsDamaged", true);
+		}
+	}
+
 	void Awake ()
 	{
 		flipperRigidbody = GetComponent <Rigidbody> ();
 		flipperHingeJoint = GetComponent <HingeJoint> ();
-		aud = GetComponent<AudioSource> ();
+		aud = GetComponent <AudioSource> ();
+		anim = GetComponent <Animator> ();
+	}
+
+	void Update ()
+	{
+		if (isDamaged) {
+			damageTimer += Time.deltaTime;
+
+			if (damageTimer > damageDuration) {
+				isDamaged = false;
+				anim.SetBool ("IsDamaged", false);
+			}
+		}
 	}
 
 	void FixedUpdate ()
 	{
-		if (Input.GetButton (buttonName)) {
+		if (!isDamaged && Input.GetButton (buttonName)) {
 			isFiring = true;
 
 			if (!flipperUpAudioPlayed) {

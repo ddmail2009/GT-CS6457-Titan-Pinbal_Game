@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 043443a98f07046f5913aa095a8a2b84
-timeCreated: 1448751306
+timeCreated: 1448992440
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ragdollTemplate: {fileID: 177356, guid: 590a639a3e6cd49fbab39c84ef0c8506, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

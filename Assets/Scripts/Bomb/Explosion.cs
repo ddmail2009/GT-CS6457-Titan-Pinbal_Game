@@ -4,6 +4,7 @@ using System.Collections;
 public class Explosion : MonoBehaviour
 {
 	public int playerDamage = 10;
+	public float flipperDisableDuration = 4f;
 
 	ParticleSystem ps;
 
@@ -27,6 +28,8 @@ public class Explosion : MonoBehaviour
 				spawnLocation.y = 0.5f;
 				Instantiate (newItem, spawnLocation, newItem.transform.rotation);
 				Destroy (collider.gameObject);
+			} else if (collider.tag == "Flipper") {
+				collider.gameObject.GetComponent <FlipperController> ().TakeDamage (flipperDisableDuration);
 			}
 		}
 	}

@@ -58,6 +58,13 @@ public class MissileBallAI : MonoBehaviour
 	
 	void Update ()
 	{
+		if (VersusManager.instance.isEnded) {
+			GetComponent<BallGravity> ().enabled = true;
+
+			this.enabled = false;
+			return;
+		}
+
 		if (currState == nextState) {
 			switch (currState) {
 			case States.Normal:
