@@ -283,7 +283,7 @@ MonoBehaviour:
   targetLookAt: {fileID: 44731903}
   distance: 5
   distanceMin: 3
-  distanceMax: 10
+  distanceMax: 8
   distanceSmooth: .0500000007
   distanceResumeSmooth: .100000001
   smoothX: .0500000007
@@ -291,8 +291,8 @@ MonoBehaviour:
   mouseSensitivityX: 4
   mouseSensitivityY: 2
   mouseWheelSensitivity: 5
-  minLimitY: -20
-  maxLimitY: 40
+  minLimitY: 5
+  maxLimitY: 30
   occlusionDistanceStep: .0500000007
   maxOcclusionChecks: 50
   reverseLeftRight: 0
@@ -728,7 +728,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1243789089}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 2.20000005}
@@ -986,11 +986,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 740648388}
+  - {fileID: 1930798877}
   - {fileID: 872312737}
   - {fileID: 1796163675}
   - {fileID: 1654508689}
-  - {fileID: 740648388}
-  - {fileID: 1930798877}
   - {fileID: 1149660011}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1602,7 +1602,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1243789089}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1636,7 +1636,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1243789089}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1921,7 +1921,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22468690, guid: 7144bcb2f103e45f9b3c0ef270c72782, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22468690, guid: 7144bcb2f103e45f9b3c0ef270c72782, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2097,7 +2097,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22406186, guid: f5449fc33bb124cfdbda99263cbf8d03, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22406186, guid: f5449fc33bb124cfdbda99263cbf8d03, type: 2}
       propertyPath: m_AnchoredPosition.x
