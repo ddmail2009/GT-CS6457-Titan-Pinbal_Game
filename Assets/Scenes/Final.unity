@@ -1375,7 +1375,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401970, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 498330, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1395,6 +1395,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462988, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
       propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976866, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938894, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428168, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436866, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485726, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: openOnStart
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
