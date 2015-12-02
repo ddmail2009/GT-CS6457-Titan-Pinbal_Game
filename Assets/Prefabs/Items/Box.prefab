@@ -12,7 +12,8 @@ GameObject:
   - 23: {fileID: 2349820}
   - 64: {fileID: 6400088}
   - 114: {fileID: 11455194}
-  m_Layer: 0
+  - 114: {fileID: 11479168}
+  m_Layer: 2
   m_Name: Box
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -86,9 +87,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 125382, guid: 85bf451f3e8b44f439d5ccc4d0a44291, type: 2}
+  - {fileID: 198780, guid: 7bf9af84070bf47189647aa552af35aa, type: 2}
+  - {fileID: 100702, guid: 9dc95819575d844fe811d0cea8874968, type: 2}
+  - {fileID: 141664, guid: a1663641cf5f744979e1f6b01e6101ab, type: 2}
   probabilities:
+  - 3
+  - 3
   - 1
+--- !u!114 &11479168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b9a265a381a4d15abf1fbc686c1a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnManager: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -98,11 +115,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: items.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: probabilities.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
@@ -111,10 +128,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: items.Array.data[0]
       value: 
-      objectReference: {fileID: 125382, guid: 85bf451f3e8b44f439d5ccc4d0a44291, type: 2}
+      objectReference: {fileID: 198780, guid: 7bf9af84070bf47189647aa552af35aa, type: 2}
     - target: {fileID: 0}
       propertyPath: probabilities.Array.data[0]
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: probabilities.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 100702, guid: 9dc95819575d844fe811d0cea8874968, type: 2}
+    - target: {fileID: 0}
+      propertyPath: items.Array.data[2]
+      value: 
+      objectReference: {fileID: 141664, guid: a1663641cf5f744979e1f6b01e6101ab, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

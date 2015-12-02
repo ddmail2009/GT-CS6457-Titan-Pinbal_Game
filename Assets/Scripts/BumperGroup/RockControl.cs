@@ -5,6 +5,7 @@ public class RockControl : MonoBehaviour
 {
 	public float size;
 	public float timeToLive = 5;
+	public float playerDamage = 8f;
 
 	private Rigidbody rockBody;
 	private int groundLayerMask;
@@ -44,7 +45,7 @@ public class RockControl : MonoBehaviour
 			aud.Play ();
 			played = true;
 		} else if (col.gameObject.tag == "Player") {
-			VersusManager.instance.ChangeValueBy (-10f);
+			VersusManager.instance.ChangeValueBy (-playerDamage);
 		}
 	}
 }

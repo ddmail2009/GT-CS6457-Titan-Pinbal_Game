@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c55a6ae22cfb24b97110869baa7c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDamage: 10
-  flipperDisableDuration: 6
+  playerDamage: 15
+  flipperDisableDuration: 5
 --- !u!198 &19800002
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3418,7 +3418,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: flipperDisableDuration
-      value: 6
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playerDamage
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
