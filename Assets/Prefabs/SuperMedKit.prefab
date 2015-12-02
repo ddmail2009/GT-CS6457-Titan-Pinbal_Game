@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f572e4b21b9b841cfbb9ccd4e17515fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healValue: 24
+  healValue: 30
   destroySpeed: .0199999996
   targetTag: Player
   clip: {fileID: 8300000, guid: b9703806690cb49a58ab182032cad276, type: 3}
@@ -128,7 +128,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: healValue
-      value: 24
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
