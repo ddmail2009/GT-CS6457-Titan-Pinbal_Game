@@ -197,14 +197,14 @@ ModelImporter:
       curves: []
       events:
       - time: .355783314
-        functionName: LeftFootprint
+        functionName: LeftFootstep
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .805270851
-        functionName: RightFootprint
+      - time: .854166687
+        functionName: RightFootstep
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
