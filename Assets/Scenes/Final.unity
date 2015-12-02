@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -85,7 +85,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .0333333351
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: c61f95f1737dd4fb4bae87adf834521c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e727697df20f446bb8d9315dcf8a139a, type: 2}
 --- !u!114 &30344175 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11495068, guid: f5449fc33bb124cfdbda99263cbf8d03,
