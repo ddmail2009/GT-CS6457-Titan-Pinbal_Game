@@ -646,6 +646,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 186706, guid: a9f750e2bd2604acf8b00a346051e859, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9f750e2bd2604acf8b00a346051e859, type: 2}
   m_IsPrefabParent: 0
@@ -824,6 +828,18 @@ Prefab:
     - target: {fileID: 11463422, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
       propertyPath: DuplicateNumberMin
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 179538, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480906, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: maxNumOfItems
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480906, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
+      propertyPath: spawningTime
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
@@ -1633,6 +1649,10 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10885268, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294966014
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
   m_IsPrefabParent: 0
@@ -1727,6 +1747,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22468690, guid: 7144bcb2f103e45f9b3c0ef270c72782, type: 2}
       propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146336, guid: 7144bcb2f103e45f9b3c0ef270c72782, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1883,6 +1907,10 @@ Prefab:
     - target: {fileID: 22406186, guid: f5449fc33bb124cfdbda99263cbf8d03, type: 2}
       propertyPath: m_Pivot.y
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 153490, guid: f5449fc33bb124cfdbda99263cbf8d03, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5449fc33bb124cfdbda99263cbf8d03, type: 2}
