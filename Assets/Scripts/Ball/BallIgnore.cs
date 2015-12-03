@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BallIgnore : MonoBehaviour
 {
-	void Awake ()
+	void OnEnable ()
 	{
 		Physics.IgnoreCollision (GetComponent<Collider> (), GameObject.Find ("PlayerWall").GetComponent<Collider> ());
 	}

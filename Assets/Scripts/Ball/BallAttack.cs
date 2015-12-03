@@ -37,7 +37,7 @@ public class BallAttack : MonoBehaviour
 			
 			Destroy (gameObject, 2.5f);
 		} else if (isDetecting) {
-			PlayerHealthManager.instance.TakeDamage (attackDamage);
+			VersusManager.instance.ChangeValueBy (-attackDamage);
 			isDetecting = false;
 			
 			Invoke ("ResumeCollision", 3.0f);

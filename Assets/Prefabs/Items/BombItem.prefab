@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 443294}
   - 33: {fileID: 3374674}
   - 23: {fileID: 2322428}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: BombBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 136: {fileID: 13608334}
   - 114: {fileID: 11400956}
   - 114: {fileID: 11423754}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: BombItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 485538}
   - 33: {fileID: 3337690}
   - 23: {fileID: 2351920}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: BombTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 4: {fileID: 474072}
   - 33: {fileID: 3352544}
   - 23: {fileID: 2357152}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: BombWick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 0}
+  secToDestroy: 30
 --- !u!136 &13608334
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -310,7 +311,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rotateAxis.y

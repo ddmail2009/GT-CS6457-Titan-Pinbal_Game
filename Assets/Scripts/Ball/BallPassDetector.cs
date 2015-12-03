@@ -5,6 +5,8 @@ public class BallPassDetector : MonoBehaviour
 {
 	void OnTriggerEnter (Collider col)
 	{
-		BallManager.instance.BallFired ();
+		if (col.gameObject.tag == "Ball") {
+			BallManager.instance.BallFired ();
+		}
 	}
 }
