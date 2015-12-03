@@ -19,7 +19,7 @@ public class Explosion : MonoBehaviour
 		foreach (Collider collider in hitColliders) {
 			if (collider.gameObject.tag == "Player") {
 				VersusManager.instance.ChangeValueBy (-playerDamage);
-			} else if (collider.gameObject.tag == "PlayerItem") {
+			} else if (collider.gameObject.tag == "PlayerItem" || collider.gameObject.tag == "Item") {
 				Destroy (collider.gameObject);
 			} else if (collider.gameObject.tag == "Box") {
 				Vector3 spawnLocation = collider.transform.position;
