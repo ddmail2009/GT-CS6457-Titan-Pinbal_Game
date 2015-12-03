@@ -98,7 +98,7 @@ public class PortalController : MonoBehaviour
 							foundPortal += 1;
 						}
 				} else if (col.tag.Equals (objectTagToOpen)) {
-					Debug.Log ("Open");
+					// Debug.Log ("Open");
 					for (int i=0; i<indicators.Length; i++) {
 						if (indicators [i].isOn () == false) {
 							indicators [i].setOn ();
@@ -160,7 +160,7 @@ public class PortalController : MonoBehaviour
 		sound.play ("Exit");
 		if (buffer.Count == 0 && closeOnLaunch) {
 			sound.stop ("Idle");
-			print ("closePortal");
+			// print ("closePortal");
 			closePortal ();
 		}
 	}
