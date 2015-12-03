@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Titan
+ * 
+ * Meng-Hsin Tung
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class SpecialBallEnabler : MonoBehaviour

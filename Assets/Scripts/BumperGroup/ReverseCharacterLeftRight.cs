@@ -1,7 +1,14 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Tzu-Wei Huang
+ */
+
+using UnityEngine;
 using System.Collections;
 
-public class ReverseCharacterLeftRight : Effect {
+public class ReverseCharacterLeftRight : Effect
+{
 	public float effectTime = 20f;
 	public ThirdPersonCameraControllerBeta cameraController;
 	public CharacterMovement characterMovement;
@@ -12,11 +19,13 @@ public class ReverseCharacterLeftRight : Effect {
 
 
 	// Use this for initialization
-	void Awake () {
+	void Awake ()
+	{
 		aud = GetComponent<AudioSource> ();
 	}
 
-	void OnEnable() {
+	void OnEnable ()
+	{
 		effectTimer = effectTime;
 		fadeOutTime = effectTime / 5;
 		characterMovement.reverseLeftRight = true;
@@ -26,7 +35,8 @@ public class ReverseCharacterLeftRight : Effect {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		if (effectTimer <= 0) {
 			characterMovement.reverseLeftRight = false;
 			cameraController.reverseLeftRight = false;
@@ -36,7 +46,7 @@ public class ReverseCharacterLeftRight : Effect {
 			effectTimer -= Time.deltaTime;
 		}
 		if (effectTimer <= fadeOutTime) {
-			aud.volume = Mathf.Lerp(1, 0, (fadeOutTime - effectTimer)/fadeOutTime);
+			aud.volume = Mathf.Lerp (1, 0, (fadeOutTime - effectTimer) / fadeOutTime);
 		}
 	}
 }

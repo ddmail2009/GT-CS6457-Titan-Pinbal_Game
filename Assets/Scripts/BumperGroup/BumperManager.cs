@@ -1,8 +1,15 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Tzu-Wei Huang
+ */
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class BumperManager : MonoBehaviour {
+public class BumperManager : MonoBehaviour
+{
 	public Bumper[] bumpers;
 	public Effect[] effects;
 	public Sprite[] effectSprites;
@@ -16,16 +23,17 @@ public class BumperManager : MonoBehaviour {
 	private int sumProb = 0;
 
 	// Use this for initialization
-	void Start() {
+	void Start ()
+	{
 		for (int i = 0; i < bumpers.Length; i++) {
-			bumpers[i].index = i;
-			bumpers[i].manager = this;
+			bumpers [i].index = i;
+			bumpers [i].manager = this;
 		}
 
-		randomSelectBumper();
+		randomSelectBumper ();
 
 		for (int i = 0; i < probabilities.Length; i++) {
-			sumProb += probabilities[i];
+			sumProb += probabilities [i];
 		}
 
 		/*
@@ -35,55 +43,61 @@ public class BumperManager : MonoBehaviour {
 		*/
 	}
 
-	public void onEffectEnd() {
-		randomSelectBumper();
+	public void onEffectEnd ()
+	{
+		randomSelectBumper ();
 	}
 
-	int randomEffectIndex() {
-		int x = Random.Range(0, sumProb);
+	int randomEffectIndex ()
+	{
+		int x = Random.Range (0, sumProb);
 		int n = 0;
 		for (int i = 0; i < probabilities.Length; i++) {
-			if (x >= n && x < (n + probabilities[i])) {
+			if (x >= n && x < (n + probabilities [i])) {
 				return i;
 			}
-			n += probabilities[i];
+			n += probabilities [i];
 		}
 		return -1;
 	}
 
-	void randomSelectBumper() {
+	void randomSelectBumper ()
+	{
 		if (targetIndex == -1) {
 			targetIndex = Random.Range (0, bumpers.Length);
 		} else {
 			targetIndex = (targetIndex + Random.Range (1, bumpers.Length - 1)) % bumpers.Length;
 		}
-		bumpers[targetIndex].state = Bumper.BumperState.Targeted;
+		bumpers [targetIndex].state = Bumper.BumperState.Targeted;
 
 	}
 
-	public void onBumperCollide(int index) {
+	public void onBumperCollide (int index)
+	{
 		if (index == targetIndex) {
-			bumpers[index].state = Bumper.BumperState.Idle;
-			randomSelectBumper();
+			bumpers [index].state = Bumper.BumperState.Idle;
+			randomSelectBumper ();
 
 			counter++;
 			if (counter >= threshold) {
 				counter = 0;
 				for (int i = 0; i < bumpers.Length; i++) {
-					bumpers[i].state = Bumper.BumperState.Idle;;
+					bumpers [i].state = Bumper.BumperState.Idle;
+					;
 				}
 				targetIndex = -1;
-				int effectIndex = randomEffectIndex();
+				int effectIndex = randomEffectIndex ();
 				//Debug.Log(effectIndex);
-				effectImage.sprite = effectSprites[effectIndex];
-				effectImageAnimator.SetTrigger("showImage");
-				effects[effectIndex].BeginEffect(this);
+				effectImage.sprite = effectSprites [effectIndex];
+				effectImageAnimator.SetTrigger ("showImage");
+				effects [effectIndex].BeginEffect (this);
 			}
 		}
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	
 	}
 }

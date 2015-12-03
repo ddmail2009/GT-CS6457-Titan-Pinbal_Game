@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Titan
+ * 
+ * Meng-Hsin Tung
+ */
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 

@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Meng-Hsin Tung
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class ItemLifeTimeManager : MonoBehaviour

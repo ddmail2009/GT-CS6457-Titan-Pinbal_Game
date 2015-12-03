@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Tzu-Wei Huang
+ */
+
+using UnityEngine;
 
 public abstract class Effect : MonoBehaviour
 {

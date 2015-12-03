@@ -1,8 +1,8 @@
 ﻿/**
- * Titan
+ * Team Titan
  * 
  * PoHsien Wang
-**/
+ */
 
 using UnityEngine;
 

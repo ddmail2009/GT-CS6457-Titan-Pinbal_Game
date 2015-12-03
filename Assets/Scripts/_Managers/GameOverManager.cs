@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Meng-Hsin Tung, Xiaoyu Chen
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class GameOverManager : MonoBehaviour

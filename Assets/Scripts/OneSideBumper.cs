@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Titan
+ * 
+ * Zizheng Wu
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class OneSideBumper : MonoBehaviour

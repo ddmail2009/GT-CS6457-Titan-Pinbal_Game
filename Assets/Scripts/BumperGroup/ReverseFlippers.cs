@@ -1,7 +1,14 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Tzu-Wei Huang
+ */
+
+using UnityEngine;
 using System.Collections;
 
-public class ReverseFlippers : Effect {
+public class ReverseFlippers : Effect
+{
 	public float effectTime = 20f;
 	public FlipperController leftFlipper;
 	public FlipperController rightFlipper;
@@ -11,11 +18,13 @@ public class ReverseFlippers : Effect {
 	private AudioSource aud;
 
 	// Use this for initialization
-	void Awake () {
+	void Awake ()
+	{
 		aud = GetComponent<AudioSource> ();
 	}
 
-	void OnEnable() {
+	void OnEnable ()
+	{
 		effectTimer = effectTime;
 		fadeOutTime = effectTime / 5;
 
@@ -25,7 +34,8 @@ public class ReverseFlippers : Effect {
 		aud.Play ();
 	}
 
-	void swapFlipperButton() {
+	void swapFlipperButton ()
+	{
 		string tmp;
 		tmp = leftFlipper.buttonName;
 		leftFlipper.buttonName = rightFlipper.buttonName;
@@ -33,7 +43,8 @@ public class ReverseFlippers : Effect {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		if (effectTimer <= 0) {
 			swapFlipperButton ();
 			enabled = false;
@@ -42,7 +53,7 @@ public class ReverseFlippers : Effect {
 			effectTimer -= Time.deltaTime;
 		}
 		if (effectTimer <= fadeOutTime) {
-			aud.volume = Mathf.Lerp(1, 0, (fadeOutTime - effectTimer)/fadeOutTime);
+			aud.volume = Mathf.Lerp (1, 0, (fadeOutTime - effectTimer) / fadeOutTime);
 		}
 	}
 }

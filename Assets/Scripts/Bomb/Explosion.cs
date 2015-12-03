@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Zizheng Wu
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class Explosion : MonoBehaviour

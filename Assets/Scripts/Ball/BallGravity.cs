@@ -2,7 +2,7 @@
  * Team Titan
  *
  * Meng-Hsin Tung
- **/
+ */
 
 using UnityEngine;
 using System.Collections;

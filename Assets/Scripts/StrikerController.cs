@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Titan
+ * 
+ * Xiaoyu Chen
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class StrikerController : MonoBehaviour

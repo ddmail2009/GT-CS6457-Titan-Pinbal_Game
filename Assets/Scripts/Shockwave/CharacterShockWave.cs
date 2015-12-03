@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * PoHsien Wang
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class CharacterShockWave : MonoBehaviour

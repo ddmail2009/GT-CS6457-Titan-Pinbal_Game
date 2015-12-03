@@ -1,5 +1,5 @@
 ﻿/**
- * Titan
+ * Team Titan
  *
  * Xiaoyu Chen
  */

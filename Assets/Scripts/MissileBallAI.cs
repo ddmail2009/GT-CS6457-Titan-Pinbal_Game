@@ -2,8 +2,6 @@
  * Titan
  * 
  * Meng-Hsin Tung
- * 
- * TODO: Use interface, subclass or reflection to remove anooying switch statement
  */
 
 using UnityEngine;

@@ -1,5 +1,5 @@
 ﻿/**
- * Titan
+ * Team Titan
  * 
  * Meng-Hsin Tung
  */

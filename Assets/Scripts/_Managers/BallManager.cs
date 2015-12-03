@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Xiaoyu Chen, Meng-Hsin Tung
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class BallManager : MonoBehaviour

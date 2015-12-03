@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * Team Titan
+ * 
+ * Tzu-Wei Huang
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class RockEffectControl : MonoBehaviour

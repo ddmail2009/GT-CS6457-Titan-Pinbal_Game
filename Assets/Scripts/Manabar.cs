@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// This script is based on GradientGUIBars
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
