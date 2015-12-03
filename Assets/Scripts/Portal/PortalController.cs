@@ -31,6 +31,9 @@ public class PortalController : MonoBehaviour
 	[Tooltip("Should it open on start of the game?")]
 	public bool
 		openOnStart = true;
+	[Tooltip("A delay time to open portal after start")]
+	public float
+		openOnStartDelay = 1.0f;
 	[Tooltip("Should it close after every balls in it exit")]
 	public bool
 		closeOnLaunch = false;
@@ -59,7 +62,7 @@ public class PortalController : MonoBehaviour
 		sound = GetComponent<PortalSoundManager> ();
 
 		if (openOnStart) {
-			openPortal ();
+			Invoke ("openPortal", openOnStartDelay);
 		}
 	}
 
