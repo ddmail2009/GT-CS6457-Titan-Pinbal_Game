@@ -177,7 +177,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
   m_AnchoredPosition: {x: -20, y: 0}
-  m_SizeDelta: {x: 670, y: 333}
+  m_SizeDelta: {x: 650, y: 333}
   m_Pivot: {x: 1, y: .5}
 --- !u!114 &97336483
 MonoBehaviour:
@@ -430,7 +430,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 60}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &441993347
 GameObject:
@@ -464,7 +464,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 500, y: 60}
+  m_SizeDelta: {x: 500, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &441993349
 MonoBehaviour:
@@ -499,7 +499,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: 'Character Design
 
-    Scripting: Portal, Flippers, MedKit'
+    Portal, Flippers, MedKit, Shocking waves'
 --- !u!222 &441993350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
   m_AnchoredPosition: {x: 20, y: 0}
-  m_SizeDelta: {x: 300, y: 180}
+  m_SizeDelta: {x: 320, y: 180}
   m_Pivot: {x: 0, y: .5}
 --- !u!1 &768345764
 GameObject:
@@ -941,9 +941,11 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: 'Scene Design and Modeling
 
-    Integration (Alpha demo)
+    Branch Integration and Tweaking
 
-    Scripting: Plunger, MedKit'
+    GamePad Support
+
+    Plunger, MedKit, Particle effects'
 --- !u!222 &846256361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -965,7 +967,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -70}
-  m_SizeDelta: {x: 300, y: 110}
+  m_SizeDelta: {x: 320, y: 110}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &860720122
 GameObject:
@@ -1409,11 +1411,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: 'Project Management
+  m_Text: 'Project Management and Branch Integration
 
-    Integration (Playtesting, Milestone 2 and 3)
+    Player and Camera Scripting
 
-    Scripting: Player, Camera, MissileBallAI'
+    Missile Ball AI, Power Pellets, Game Menu'
 --- !u!222 &1006758630
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2082,7 +2084,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: 'Scripting: Secret weapons (meteorite), Jumping action
+  m_Text: 'Secret weapons (meteorite, Invert directions)
+
+    Particle effects and Jumping action
 
 '
 --- !u!222 &1642390077
@@ -2636,7 +2640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: 'Scripting: One-sided bumpers'
+  m_Text: One-sided bumpers, Bomb and Item Box
 --- !u!222 &2126290411
 CanvasRenderer:
   m_ObjectHideFlags: 0
