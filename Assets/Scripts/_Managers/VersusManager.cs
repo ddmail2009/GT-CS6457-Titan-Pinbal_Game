@@ -22,7 +22,7 @@ public class VersusManager : MonoBehaviour
 	
 	public void ChangeValueBy (float diff)
 	{
-		if (isLocked && diff < 0) {
+		if (isEnded || isLocked && diff < 0) {
 			return;
 		}
 
@@ -48,21 +48,19 @@ public class VersusManager : MonoBehaviour
 			return;
 		}
 
-		if (isStarting) {
+		if (currValue <= minValue || currValue >= maxValue) {
+			isEnded = true;
+			
+			if (currValue <= minValue) {
+				ReplacePlayerWithRagdoll ();
+			}
+		} else if (isStarting) {
 			currValue -= decaySpeed * Time.deltaTime;
 
 			if (currValue < minValue) {
 				currValue = minValue;
 			} else if (currValue > maxValue) {
 				currValue = maxValue;
-			}
-		}
-
-		if (currValue <= minValue || currValue >= maxValue) {
-			isEnded = true;
-
-			if (currValue <= minValue) {
-				ReplacePlayerWithRagdoll ();
 			}
 		}
 	}

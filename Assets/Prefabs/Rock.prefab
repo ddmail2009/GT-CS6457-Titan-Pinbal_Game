@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 5475210}
   - 114: {fileID: 11492752}
   - 82: {fileID: 8271692}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ GameObject:
   - 4: {fileID: 467058}
   - 198: {fileID: 19872774}
   - 199: {fileID: 19993840}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - 4: {fileID: 453394}
   - 198: {fileID: 19836804}
   - 199: {fileID: 19907802}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2251,6 +2251,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: playerDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

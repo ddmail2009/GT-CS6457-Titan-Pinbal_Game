@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
+  destroyDamage: 10
   effectClip: {fileID: 8300000, guid: 8d1e22c4f1cb9434d9420e8ad37637c7, type: 3}
   burningEffectTemplate: {fileID: 179262, guid: 68269740aefe146f88abee0ec0f67bda,
     type: 2}
@@ -1478,6 +1479,10 @@ Prefab:
       propertyPath: burningEffectTemplate
       value: 
       objectReference: {fileID: 179262, guid: 68269740aefe146f88abee0ec0f67bda, type: 2}
+    - target: {fileID: 0}
+      propertyPath: destroyDamage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116654}

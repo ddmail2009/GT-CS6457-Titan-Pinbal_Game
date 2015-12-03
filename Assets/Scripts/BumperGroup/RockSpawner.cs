@@ -66,7 +66,7 @@ public class RockSpawner : Effect
 	{
 		float y, x, z;
 		y = Random.Range (30f, 35f);
-		if (Random.value < 0.5f) {
+		if (Random.value < 0.5f || !player) {
 			x = Random.Range (bounds.center.x - bounds.extents.x, bounds.center.x + bounds.extents.x);
 			z = Random.Range (bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z);
 		} else {

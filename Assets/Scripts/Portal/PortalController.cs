@@ -26,7 +26,7 @@ public class PortalController : MonoBehaviour
 		linkPortals = null;
 	[Tooltip("How many duplicate should be generated?")]
 	public int
-		DuplicateNumber = 1;
+		DuplicateNumberMin = 1, DuplicateNumberMax = 5;
 
 
 	[Tooltip("Should it open on start of the game?")]
@@ -90,14 +90,18 @@ public class PortalController : MonoBehaviour
 				if (isOpen ()) {
 					GameObject portal = null;
 					int foundPortal = 0;
-					for (int i=0; i<linkPortals.Length; i++)
-						if ((portal = linkPortals [Random.Range (0, linkPortals.Length)]) != null && foundPortal < DuplicateNumber) {
+
+					int thisDuplicateNumber = Random.Range (DuplicateNumberMin, DuplicateNumberMax);
+
+					for (int i=0; i<linkPortals.Length; i++) {
+						if ((portal = linkPortals [Random.Range (0, linkPortals.Length)]) != null && foundPortal < thisDuplicateNumber) {
 							GameObject obj = col.gameObject;
 							if (foundPortal != 0)
 								obj = Instantiate (col.gameObject);
 							portalEnter (obj, portal);
 							foundPortal += 1;
 						}
+					}
 				} else if (col.tag.Equals (objectTagToOpen)) {
 					// Debug.Log ("Open");
 					for (int i=0; i<indicators.Length; i++) {
