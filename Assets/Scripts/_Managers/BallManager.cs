@@ -7,9 +7,7 @@ public class BallManager : MonoBehaviour
 	public GameObject ballTemplate;
 	public int numOfBalls = 0;
 	public Transform ballSpawnPoint;
-	public float minSpawnInterval = 3f;
-
-	bool readyForSpawning = true;
+	public float spawnInterval = 3f;
 
 	AudioSource aud;
 
@@ -17,15 +15,13 @@ public class BallManager : MonoBehaviour
 	{
 		instance = this;
 		aud = GetComponent<AudioSource> ();
+
+		SpawnNewBall ();
 	}
 
-	void Update ()
+	public void BallFired ()
 	{
-		if (readyForSpawning && Input.GetButtonUp ("SpawnBall")) {
-			SpawnNewBall ();
-			readyForSpawning = false;
-			Invoke ("GetReadyForSpawning", minSpawnInterval);
-		}
+		Invoke ("SpawnNewBall", spawnInterval);
 	}
 
 	void SpawnNewBall ()
@@ -34,10 +30,5 @@ public class BallManager : MonoBehaviour
 		GameObject newBall = Instantiate (ballTemplate, ballSpawnPoint.position + transform.up * 0.5f, new Quaternion (15, 0, 0, 0)) as GameObject;
 		newBall.transform.parent = transform;
 		numOfBalls += 1;
-	}
-
-	void GetReadyForSpawning ()
-	{
-		readyForSpawning = true;
 	}
 }
