@@ -1,7 +1,7 @@
 ﻿/**
  * Team Titan
  *
- * Xiaoyu Chen, Meng-Hsin
+ * Xiaoyu Chen, Meng-Hsin Tung
  **/
 
 using UnityEngine;
@@ -9,7 +9,7 @@ using System.Collections;
 
 public class BallAttack : MonoBehaviour
 {
-	public int attackDamage = 40;
+	public int attackDamage = 40, destroyDamage = 15;
 	public AudioClip effectClip;
 	public GameObject burningEffectTemplate;
 	
@@ -43,7 +43,12 @@ public class BallAttack : MonoBehaviour
 			Invoke ("ResumeCollision", 3.0f);
 		}
 	}
-	
+
+	void OnDestroy ()
+	{
+		VersusManager.instance.ChangeValueBy (destroyDamage);
+	}
+
 	void ResumeCollision ()
 	{
 		isDetecting = true;
