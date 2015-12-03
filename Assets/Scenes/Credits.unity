@@ -499,7 +499,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: 'Character Design
 
-    Portal, Flippers, MedKit, Shocking waves'
+    Portal, Flippers, MedKit and Shocking waves'
 --- !u!222 &441993350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -943,9 +943,9 @@ MonoBehaviour:
 
     Branch Integration and Tweaking
 
-    GamePad Support
+    GamePad Support, Sound effect
 
-    Plunger, MedKit, Particle effects'
+    Plunger, MedKit, Particle effect'
 --- !u!222 &846256361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2086,7 +2086,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: 'Secret weapons (meteorite, Invert directions)
 
-    Particle effects and Jumping action
+    Sound effect, Particle effects and Jumping action
 
 '
 --- !u!222 &1642390077
