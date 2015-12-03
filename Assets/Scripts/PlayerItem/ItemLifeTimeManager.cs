@@ -13,7 +13,7 @@ public class ItemLifeTimeManager : MonoBehaviour
 
 	void SelfDestroy ()
 	{
-		Destroy (this);
+		Destroy (gameObject);
 	}
 	
 

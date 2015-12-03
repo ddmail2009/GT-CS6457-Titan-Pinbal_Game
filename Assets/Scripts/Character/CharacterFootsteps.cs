@@ -15,7 +15,7 @@ public class CharacterFootsteps : MonoBehaviour
 
 	public void Awake ()
 	{
-		aud = GetComponent<AudioSource> ();
+		aud = GetComponents<AudioSource> () [1];
 	}
 
 	public void LeftFootstep ()
