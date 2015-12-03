@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 112000001, guid: 631f9cda805fc46358bb031aaf8743c8,
+  m_LightmapSnapshot: {fileID: 112000001, guid: 3442672b2050a4952af711336daf1921,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -247,7 +247,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966271
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -809,50 +809,6 @@ Prefab:
       propertyPath: effectImage
       value: 
       objectReference: {fileID: 1796163676}
-    - target: {fileID: 480238, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 480238, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 5.78100014
-      objectReference: {fileID: 0}
-    - target: {fileID: 480238, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.10000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 480238, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 175462, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 175462, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 138458, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 138458, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 169326, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 169326, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 110946, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0847eed8d2bf4e2c8613f42fcbd84ef, type: 2}
   m_IsPrefabParent: 0
@@ -961,6 +917,7 @@ MonoBehaviour:
   currValue: 0
   isStarting: 1
   isEnded: 0
+  isLocked: 0
   ragdollTemplate: {fileID: 177356, guid: 590a639a3e6cd49fbab39c84ef0c8506, type: 2}
 --- !u!1 &1151391980
 GameObject:
@@ -1640,10 +1597,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11464524, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
-      propertyPath: playerCamera
+    - target: {fileID: 11407576, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
+      propertyPath: icon
       value: 
-      objectReference: {fileID: 79285044}
+      objectReference: {fileID: 1996567082}
     - target: {fileID: 11455462, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
       propertyPath: Ground
       value: 
@@ -1652,10 +1609,10 @@ Prefab:
       propertyPath: bar
       value: 
       objectReference: {fileID: 30344175}
-    - target: {fileID: 11407576, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
-      propertyPath: icon
+    - target: {fileID: 11464524, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
+      propertyPath: playerCamera
       value: 
-      objectReference: {fileID: 1996567082}
+      objectReference: {fileID: 79285044}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b439f15e17ea4627897dff85c51c5e3, type: 2}
   m_IsPrefabParent: 0

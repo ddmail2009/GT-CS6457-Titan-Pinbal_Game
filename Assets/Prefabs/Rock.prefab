@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 1
   timeToLive: 8
+  playerDamage: 10
 --- !u!198 &19836804
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2246,6 +2247,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: timeToLive
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playerDamage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

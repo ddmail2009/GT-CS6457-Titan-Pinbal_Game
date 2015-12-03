@@ -22,6 +22,7 @@ public class PlayerItemManager : MonoBehaviour
 		icon.sprite = item.sprite;
 		icon.color = Color.white;
 
+		item.GetComponent <ItemLifeTimeManager> ().CancelInvoke ();
 		_currItem = item;
 	}
 	

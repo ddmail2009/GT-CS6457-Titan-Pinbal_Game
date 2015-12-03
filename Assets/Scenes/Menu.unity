@@ -329,19 +329,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 105920380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe0e3013f672141a28fa8241aba4ac82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumpers:
-  - {fileID: 413349725}
-  - {fileID: 657293692}
-  - {fileID: 1421391453}
-  - {fileID: 957884046}
-  effects:
-  - {fileID: 0}
-  threshold: 3
 --- !u!1 &107407440
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +707,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Alpha
+          m_StringArgument: Final
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2121,6 +2113,7 @@ MonoBehaviour:
   maxForce: 100000
   shrinkRateInSecond: 1.5
   maxShrinkRate: .75
+  maxStrikeDistance: 4.5
 --- !u!65 &1398046827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3024,7 +3017,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1583665340}
   - 82: {fileID: 1583665342}
-  - 114: {fileID: 1583665341}
   m_Layer: 8
   m_Name: Plunger
   m_TagString: Untagged
@@ -3049,25 +3041,6 @@ Transform:
   - {fileID: 1398046824}
   m_Father: {fileID: 275320824}
   m_RootOrder: 4
---- !u!114 &1583665341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11497006, guid: d0847eed8d2bf4e2c8613f42fcbd84ef,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1583665339}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c22b429fe96e6460686edd72b40588cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballTemplates:
-  - {fileID: 171370, guid: f42bb78464a3a4979ac2e74a59e6312b, type: 2}
-  - {fileID: 171370, guid: d018f6ad9e4b44f259192a40270bdc91, type: 2}
-  - {fileID: 171370, guid: d8525272e02dc422d9b39ed8f930318f, type: 2}
-  numOfBalls: 0
-  ballSpawnPoint: {fileID: 292678479}
-  minSpawnInterval: 3
 --- !u!82 &1583665342
 AudioSource:
   m_ObjectHideFlags: 0

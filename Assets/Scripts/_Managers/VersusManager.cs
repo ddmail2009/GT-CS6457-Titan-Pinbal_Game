@@ -16,11 +16,16 @@ public class VersusManager : MonoBehaviour
 	public float currValue;
 
 	public bool isStarting = false, isEnded = false;
+	public bool isLocked = false;
 
 	public GameObject ragdollTemplate;
 	
 	public void ChangeValueBy (float diff)
 	{
+		if (isLocked && diff < 0) {
+			return;
+		}
+
 		currValue += diff;
 		if (currValue > maxValue) {
 			currValue = maxValue;
@@ -28,6 +33,7 @@ public class VersusManager : MonoBehaviour
 			currValue = minValue;
 		}
 	}
+
 
 	void Awake ()
 	{

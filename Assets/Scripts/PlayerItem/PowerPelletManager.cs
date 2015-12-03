@@ -23,6 +23,8 @@ public class PowerPelletManager : MonoBehaviour
 
 		isEnabled = true;
 		effect.Play ();
+
+		VersusManager.instance.isLocked = true;
 	}
 
 	void Disable ()
@@ -31,6 +33,8 @@ public class PowerPelletManager : MonoBehaviour
 		_timer = 0f;
 		isEnabled = false;
 		effect.Stop ();
+
+		VersusManager.instance.isLocked = false;
 	}
 
 	void Awake ()

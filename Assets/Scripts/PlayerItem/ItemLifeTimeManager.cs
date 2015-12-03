@@ -12,6 +12,12 @@ public class ItemLifeTimeManager : MonoBehaviour
 	public ItemSpawnManager spawnManager;
 	public int secToDestroy = 30;
 
+	public void CancelSelfDestroy ()
+	{
+		CancelInvoke ();
+		enabled = false;
+	}
+
 	void Awake ()
 	{
 		Invoke ("SelfDestroy", secToDestroy);
