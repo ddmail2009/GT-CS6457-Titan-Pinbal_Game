@@ -31,7 +31,11 @@ public class GameOverManager : MonoBehaviour
 
 	void PlayAnimation ()
 	{
-		anim.SetTrigger ("GameOver");
+		if (VersusManager.instance.winner == VersusManager.Winner.ATTACKER) {
+			anim.SetTrigger ("AttackerWin");
+		} else if (VersusManager.instance.winner == VersusManager.Winner.DODGER) {
+			anim.SetTrigger ("DodgerWin");
+		}
 	}
 
 	void RestartLevel ()

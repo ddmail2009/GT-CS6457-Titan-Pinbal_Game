@@ -18,6 +18,14 @@ public class VersusManager : MonoBehaviour
 	public bool isStarting = false, isEnded = false;
 	public bool isLocked = false;
 
+	public enum Winner
+	{
+		DODGER,
+		ATTACKER
+	}
+	public Winner winner = Winner.DODGER;
+
+
 	public GameObject ragdollTemplate;
 	
 	public void ChangeValueBy (float diff)
@@ -48,12 +56,14 @@ public class VersusManager : MonoBehaviour
 			return;
 		}
 
-		if (currValue <= minValue || currValue >= maxValue) {
+		if (currValue <= minValue) {
 			isEnded = true;
-			
-			if (currValue <= minValue) {
-				ReplacePlayerWithRagdoll ();
-			}
+			winner = Winner.DODGER;
+
+			ReplacePlayerWithRagdoll ();
+		} else if (currValue >= maxValue) {
+			isEnded = true;
+			winner = Winner.ATTACKER;
 		} else if (isStarting) {
 			currValue -= decaySpeed * Time.deltaTime;
 
