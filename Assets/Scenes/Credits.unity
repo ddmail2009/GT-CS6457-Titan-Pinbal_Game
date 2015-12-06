@@ -875,13 +875,13 @@ MonoBehaviour:
     Audio Library\n\nFont Dashley is licensed under OFL (SIL Open Font License) (https://fontlibrary.org/en/font/dashley)\nFont
     DejaVu Sans is licensed under Bitstream Vera License (https://fontlibrary.org/en/font/dejavu-sans)\n\nCharacter
     model is made by Mixamo fuse\nAll character animations are from mixamo.com\n\nPinball
-    sounds are from http://www.vpforums.org/Tutorials/Sounds/SndLib1.html\nRunning
-    sound is from SoundBible (http://soundbible.com/)\nCharacter voices are from http://www.pacdv.com/sounds/index.html\nMedkit
-    sound is selected from Sound Pack Free Edition at Unity asset store\n\nFreesound.org:\n
-    \       Small Rock and Stone Hits.wav by lolamadeus.    Bomb - Small by Zangrutz.\n
-    \       MAGICAL_EFFECT.wav by StephenSaldanha.         transport 2.wav by Corsica_S.\n
-    \       SFX_MAGIC_FIREBALL_001.wav by JoelAudio.       Tick Tock by FoolBoyMedia.\n\nCamera
-    scripts are based on http://www.3dbuzz.com/training/view/3rd-person-character-system\n\nRock
+    sounds are from http://www.vpforums.org/Tutorials/Sounds/SndLib1.html\nCharacter
+    voices are from http://www.pacdv.com/sounds/index.html\nMedkit sound is selected
+    from Sound Pack Free Edition at Unity asset store\n\nFreesound.org:\n        Small
+    Rock and Stone Hits.wav by lolamadeus.    Bomb - Small by Zangrutz.\n        MAGICAL_EFFECT.wav
+    by StephenSaldanha.         transport 2.wav by Corsica_S.\n        SFX_MAGIC_FIREBALL_001.wav
+    by JoelAudio.       Tick Tock by FoolBoyMedia.\n        woman running on pavement
+    stops hiheels 3.wav by bulbastre\n\nCamera scripts are based on http://www.3dbuzz.com/training/view/3rd-person-character-system\n\nRock
     models are from Yughues Free Rocks (https://www.assetstore.unity3d.com/en/#!/content/13568)\nMedkit
     model is from Small Survival Pack (https://www.assetstore.unity3d.com/en/#!/content/20565)\n\nKY
     Magic Effects Free is used for shockwave effect. GradientGUIBars is used for Manabar."
@@ -2084,7 +2084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: 'Secret weapons (meteorite, Invert directions)
+  m_Text: 'Secret weapons (Meteorite, Invert directions)
 
     Sound effect, Particle effects and Jumping action
 
