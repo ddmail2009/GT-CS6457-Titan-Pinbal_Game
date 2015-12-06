@@ -836,7 +836,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 500}
+  m_SizeDelta: {x: 750, y: 500}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &798834269
 MonoBehaviour:
@@ -874,7 +874,7 @@ MonoBehaviour:
     http://creativecommons.org/licenses/by/3.0/\nMessiah by Handel is from YouTube
     Audio Library\n\nFont Dashley is licensed under OFL (SIL Open Font License) (https://fontlibrary.org/en/font/dashley)\nFont
     DejaVu Sans is licensed under Bitstream Vera License (https://fontlibrary.org/en/font/dejavu-sans)\n\nCharacter
-    model is made by Mixamo fuse\nAll character animations are from mixamo.com\n\nPinball
+    model is made by Mixamo fuse. All character animations are from mixamo.com\n\nPinball
     sounds are from http://www.vpforums.org/Tutorials/Sounds/SndLib1.html\nCharacter
     voices are from http://www.pacdv.com/sounds/index.html\nMedkit sound is selected
     from Sound Pack Free Edition at Unity asset store\n\nFreesound.org:\n        Small
@@ -884,7 +884,11 @@ MonoBehaviour:
     stops hiheels 3.wav by bulbastre\n\nCamera scripts are based on http://www.3dbuzz.com/training/view/3rd-person-character-system\n\nRock
     models are from Yughues Free Rocks (https://www.assetstore.unity3d.com/en/#!/content/13568)\nMedkit
     model is from Small Survival Pack (https://www.assetstore.unity3d.com/en/#!/content/20565)\n\nKY
-    Magic Effects Free is used for shockwave effect. GradientGUIBars is used for Manabar."
+    Magic Effects Free is used for shockwave effect. GradientGUIBars is used for Manabar.\n\nStriker
+    explosion fire texture: http://nobacks.com/fire-fifty/ \nMissile ball smoke texture:
+    http://nobacks.com/smoke-nineteen/\n(Two above are free for personal use only.)\nStriker
+    explosion spark: Unity Standard Assets\n\nMeteorite fire: http://pngimg.com/download/6025
+    Meteorite smoke: http://pngimg.com/download/967"
 --- !u!222 &798834270
 CanvasRenderer:
   m_ObjectHideFlags: 0
