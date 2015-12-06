@@ -41,18 +41,24 @@ Game Play Instructions
 
 Dodger Control
   - Use GamePad (PS4 tested)
-    - [TODO]
-  - Use Keyboard
+    - Left joystick to move
+    - Right joystick to control camera
+    - 'X' to jump
+    - 'Circle' to crouch and release shocking waves
+    - 'R1' to use items (Bomb, Power Pellets)
+  - Use Keyboard & Mouse
     - WASD to move
+    - Mouse to control camera
     - Spacebar to jump
     - Ctrl to crouch and release shocking waves
+    - 'e' to use items (Bomb, Power Pellets)
 
 Attacker Control
   - Keyboard
     - '.' to move left flipper, '/' to move right flipper
     - '[' to fire a new ball using plunger
 
-During game, You can press Esc [TODO: GamePad?] to pause.
+During game, You can press Esc or 'Options' of PS4 controller to pause.
 
 Dodger's path to win
   - Collect MedKits
@@ -93,7 +99,7 @@ Complete - Precursors to Fun Gameplay
   - Examples of interesting choices
     - Attacker can shot many balls to increase pressure on Dodger, but it might suffer from losing many balls.
     - Attacker can trigger secret weapons, but sometimes it might backfire to attacker.
-    - Dodger can use shocking wave to block balls, but he needs to slow down his movement and definitve gets damages if he misses the timing.
+    - Dodger can use shocking wave to block balls, but he needs to slow down his movement and risk getting damages if he misses the timing.
     - Dodger can either use bomb to disable flippers or to get more powerful items from boxes.
     - Dodger can decide when to use items. Use it as soon as possible or keep it until there are too many balls or secret weapon is triggered.
   - Power pellets make characters of Dodger and Attacker switched. Originally, Attacker wants balls to hit Dodger but Attacker would avoid his attempt during power pellets in effect.
